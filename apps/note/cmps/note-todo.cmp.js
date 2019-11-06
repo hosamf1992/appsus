@@ -1,11 +1,8 @@
 export default {
   template: `
         <section>
-           <h1>
-                {{value.content}}
-            </h1>
+            <h2>{{value.content}}</h2>
             <button @:click="removeNote(value.id)">x</button>
-        
         </section>
         `,
   props: ["value"],

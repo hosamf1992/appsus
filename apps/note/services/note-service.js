@@ -52,17 +52,17 @@ let gNotes = [
     {
         id: makeId(),
         content: "Collect Shirt",
-        type: 'noteToDo',
+        type: 'noteTodo',
         createdAt: null,
-        img: '../img/note/shirt.jpg',
+        img: '',
         isPinned: false,
       },
       {
         id: makeId(),
         content: "Do some sport",
-        type: 'noteTxt',
+        type: 'noteText',
         createdAt: null,
-        img: null,
+        img: '',
         isPinned: false,
       }
     ]

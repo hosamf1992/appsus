@@ -1,9 +1,7 @@
 export default {
   template: `
         <section>
-           <h1>
-                {{value.content}}
-            </h1>
+            <img :src="value.img" />
             <button @:click="removeNote(value.id)">x</button>
         
         </section>
