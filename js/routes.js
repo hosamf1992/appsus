@@ -1,6 +1,6 @@
 
 import noteApp from '../apps/note/pages/note-app.cmp.js';
-import mailApp from '../apps/mail/pages/mail-app.cmp.js';
+import mailApp from '../apps/mail/pages/email-app.cmp.js';
 
 
 
