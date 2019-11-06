@@ -1,8 +1,7 @@
-console.log('mail-app');
 
 
 'use strict';
-// import {bookServices} from '../services/book-service.js';
+import {mailServices} from '../services/email-service.js'
 
 // import bookList from '../cmps/book-list.cmp.js';
 
@@ -40,7 +39,7 @@ export default {
     },
     created(){
   
-
+        mailServices.getMails()
     },
     components: {
      
