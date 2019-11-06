@@ -6,6 +6,7 @@ import {makeId} from '/js/services/util.service.js'
 export const noteService = {
     getNotes,
     getNoteById,
+    removeToDo,
     removeNote,
     addNote
 }
@@ -32,7 +33,15 @@ let newNote = {
       createdAt: Date.now(),
       img: '',
       isPinned: false,
+      color: '',
 }
+// if (note.type === 'noteTodo') {
+//   newNote.content = newNote.content.split(', ')
+//   let todosNew = newNoteTodos.map(todo => ({content: todo, isCompleted: false, id: makeId()}))
+//   note.content = todosNew
+// }
+
+
 if(note.type === "noteImg") {
   newNote.img = newNote.content
   newNote.content = ''
@@ -43,18 +52,16 @@ if(note.type === "noteImg") {
 
 function removeNote(noteId) {
   var idx = gNotes.findIndex(note => note.id === noteId)
-  console.log(idx)
   if (idx !== -1) gNotes.splice(idx,1)
   storageService.store(NOTES_KEY, gNotes)
 }
 
-// function removeReview(book, reviewId) {
-//   var idx = book.reviews.findIndex(review => review.id === reviewId);
-//   if (idx !== -1) book.reviews.splice(idx, 1)
-//   storageService.store(BOOKS_KEY, gBooks)
-//   return Promise.resolve(book);
-// }
-
+function removeToDo(noteId, toDoId) {
+  var noteIdx = gNotes.findIndex(note => note.id === noteId)
+  var toDoIdx = gNotes[noteIdx].content.findIndex(content => content.toDoId === toDoId)
+  if (noteIdx !== -1 && toDoIdx !== -1) gNotes[noteIdx].content.splice(toDoIdx,1)
+  storageService.store(NOTES_KEY, gNotes)
+}
 
 let gNotes = [
     {
@@ -64,14 +71,28 @@ let gNotes = [
       createdAt: null,
       img: '../img/note/milk.jpg',
       isPinned: false,
+      color: 'blue'
     },
     {
         id: makeId(),
-        content: "Collect Shirt",
+        content: [ {toDoId:makeId(),
+                    isCompleted: false,
+                    toDoContent: "Collect Shirt",
+                },
+                  {toDoId:makeId(),
+                    isCompleted: true,
+                    toDoContent: "Visit barber",
+                },
+                {toDoId:makeId(),
+                  isCompleted: false,
+                  toDoContent: "Get car to repair",
+              }
+        ],
         type: 'noteTodo',
         createdAt: null,
         img: '',
         isPinned: false,
+        color: 'red'
       },
       {
         id: makeId(),
@@ -80,6 +101,6 @@ let gNotes = [
         createdAt: null,
         img: '',
         isPinned: false,
+        color: 'orange'
       }
     ]
-

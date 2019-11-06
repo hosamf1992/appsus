@@ -1,7 +1,7 @@
 'use strict';
 
 
-//add link 
+//Delete
 
 export default {
     name: 'note-preview',
