@@ -32,7 +32,7 @@ let newNote = {
       img: '',
       isPinned: false,
 }
-if(note.type === "image") {
+if(note.type === "noteImg") {
   newNote.img = newNote.content
   newNote.content = ''
 }

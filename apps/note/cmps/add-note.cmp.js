@@ -7,9 +7,9 @@ export default {
     <section>
         <input type="text" placeholder="Add note" v-model="val.content" />
         <select v-model="val.type">
-            <option value="text">Text</option>
-            <option value="image">Image</option>
-            <option value="todo">To do</option>
+            <option value="noteText">Text</option>
+            <option value="noteImg">Image</option>
+            <option value="noteTodo">To do</option>
           </select>
           <button @click="addNote">Add</button>
 </section>

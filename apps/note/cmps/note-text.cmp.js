@@ -4,7 +4,7 @@ export default {
            <h1>
                 {{value.content}}
             </h1>
-            <button @:click="removeNote(value.id)">x</button>
+            <button @click="removeNote(value.id)">x</button>
         
         </section>
         `,
