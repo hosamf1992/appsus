@@ -6,6 +6,7 @@ import {makeId} from '/js/services/util.service.js'
 export const noteService = {
     getNotes,
     getNoteById,
+    removeNote,
     addNote
 }
 
@@ -39,6 +40,21 @@ if(note.type === "noteImg") {
   gNotes.unshift(newNote)
   storageService.store(NOTES_KEY, gNotes)
 }
+
+function removeNote(noteId) {
+  var idx = gNotes.findIndex(note => note.id === noteId)
+  console.log(idx)
+  if (idx !== -1) gNotes.splice(idx,1)
+  storageService.store(NOTES_KEY, gNotes)
+}
+
+// function removeReview(book, reviewId) {
+//   var idx = book.reviews.findIndex(review => review.id === reviewId);
+//   if (idx !== -1) book.reviews.splice(idx, 1)
+//   storageService.store(BOOKS_KEY, gBooks)
+//   return Promise.resolve(book);
+// }
+
 
 let gNotes = [
     {

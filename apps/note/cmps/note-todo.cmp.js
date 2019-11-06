@@ -1,3 +1,5 @@
+import { noteService } from "../services/note-service.js"
+
 export default {
   template: `
         <section>
@@ -9,7 +11,7 @@ export default {
   
   methods: {
         removeNote(noteId) {
-            console.log(noteId)
+            noteService.removeNote(noteId)
         }
     },
   computed: {

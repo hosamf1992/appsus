@@ -9,10 +9,6 @@ export default {
     props: ['notes'],
     template: `
         <section class="note-list-container">
-            <!-- <ul class="note-list">
-                <note-preview v-for="currNote in notes" :note="currNote" @click.native="onSelectNote(currNote.id)" :key="currNote.id">
-                </note-preview>
-            </ul> -->
             <div v-for="(note, idx) in notes">
                     <component :is="note.type"  :value="note"></component>
             </div>
@@ -21,7 +17,6 @@ export default {
     data() {
             return {
                     selectedNote: null,
-                    // notes: null
         }
     },
     methods: {  
