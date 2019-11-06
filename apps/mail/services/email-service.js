@@ -4,8 +4,8 @@
 import {storageService} from '/js/services/util.service.js'
 import {makeId}  from '/js/services/util.service.js'
 
-export const mailServices = {
-    getMails,
+export const emailServices = {
+  getMails,
 
    
   }
@@ -49,7 +49,7 @@ let gMails=[
 window.emails=gMails;
 
 
-getMails()
+// getMails()
 function getMails() {
 
     let emails = storageService.load(MAIL_KEY)
@@ -59,7 +59,7 @@ function getMails() {
     }
     gMails = emails;
   
-    // return Promise.resolve(gMails);
+    return Promise.resolve(gMails);
   }
 
 

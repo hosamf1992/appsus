@@ -1,34 +1,35 @@
-import bookPreview from  './book-preview.cmp.js';
+import emailPreview from './email.preview.cmp.js';
 
 
 
-// Vue.component('book-list', {
-    export default {
-    props: ['books'],
+export default {
+    props: ['emails'],
     template: `
-    <section class="book-list-container">
-        <ul class="book-list">
-       
+    <section class="email-list-container">
+        <ul class="email-list">
 
-         
-          <book-preview  v-for="currBook in books" :key="currBook.id"  :book="currBook"></book-preview>
-            
+           <email-preview  v-for="currEmail in results" :key="currEmail.id"  :email="currEmail"></email-preview> 
+   
         </ul>
     </section>
     `,
 
- 
     data() {
-    return {
-
-     }
+        return {
+            results: []
+        }
     },
-   
- computed:{
-    
+    created() {
+        this.results = emails;
+       
+    }
 
-  },
-components: {
-    bookPreview
-}
+    ,computed: {
+
+
+    },
+    components: {
+        emailPreview,
+
+    }
 }

@@ -1,13 +1,13 @@
 
 
     export default {
-        props: ['mail'],
+        props: ['email'],
         template: `
-            <li>
-                <h1> {{mail.subject}}</h1>
+            <li class="flex space-around">
+                <h1> {{email.sentFrom}}</h1>
+                <h1> {{email.subject}}</h1>
+                <p>time</p>
               
-
-               
             </li>
         `,
         

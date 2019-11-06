@@ -1,9 +1,9 @@
 
 
 'use strict';
-import {mailServices} from '../services/email-service.js'
+import { emailServices } from '../services/email-service.js'
 
-// import bookList from '../cmps/book-list.cmp.js';
+import emailList from '../cmps/email-list.cmp.js';
 
 
 Vue.config.productionTip = false
@@ -15,34 +15,48 @@ export default {
      
       <section>
      <h1 class="email-title" >Hey mail app</h1>
+
+     <email-list  :emails="emailsToshow" ></email-list>
+    
+
         
         </section>
   
     `,
     data() {
-        return{
-         
+        return {
+            emails,
+
+
         }
-     
-   
+
+
     },
     methods: {
-   
-     
-        
+
+
+
     },
     computed: {
-       
-      
-      
-     
+
+        emailsToshow() {
+            this.emails = emailServices.getMails();
+
+        }
+
     },
-    created(){
-  
-        mailServices.getMails()
+    created() {
+
+        emailServices.getMails()
+            .then(mails => this.emails = mails,
+                console.log(this.emails)
+
+            );
     },
     components: {
-     
+        emailList,
+
+
 
 
     }

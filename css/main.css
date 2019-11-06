@@ -2,3 +2,67 @@
 
 @import './note/main-note.css';
 
+/* helpers */
+
+.flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+.grid{
+    display: grid;
+}
+ 
+
+.list-none{
+    list-style: none;
+    
+}
+
+.margin-center{
+    margin: 0 auto;
+    display: block;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}
+.text-center{
+text-align:center;
+
+}
+
+.cursor{
+cursor: pointer
+
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around
+}
+
+.wrap{
+ flex-wrap: wrap;
+
+}
