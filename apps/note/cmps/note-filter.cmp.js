@@ -3,29 +3,30 @@
 export default {
     name: 'note-filter',
     template: `
-<section class="note-filter">
-<h2>Filter by</h2>
-<form @submit.prevent="onFilter">
-Content:
-<input type="text" placeholder="Note content" v-model="filterBy.content" />
-Title: 
-<input class="title-input" type="text" v-model.number="filterBy.title" />
+        <section class="note-filter">
 
-</form>
+        <form @submit.prevent="onFilter">
+        Filter by Content:
+        <input type="text" placeholder="Search notes" v-model="filterBy.content" />
+        <button>Filter</button>
+        </form>
+
 </section>
 `,
     data() {
         return {
-            filterBy: {content: '', title: ''}
+            filterBy:
+                {
+                content: '',
+                title: ''
+            }
         }
     },
     
     methods: {
         onFilter() {
-            let filter = {...this.filterBy};
-            this.$emit('filtered', filter);
+            console.log('Filter Created', this.filterBy);
+            this.$emit('filtered', this.filterBy)
         }
     }
 }
-
-
