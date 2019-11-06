@@ -6,7 +6,7 @@ export default {
     props: ['emails'],
     template: `
     <section class="email-list-container">
-        <ul class="email-list">
+        <ul >
 
            <email-preview  v-for="currEmail in results" :key="currEmail.id"  :email="currEmail"></email-preview> 
    
