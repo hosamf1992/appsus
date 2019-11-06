@@ -2,7 +2,7 @@
 'use strict';
 import {noteService} from '../services/note-service.js';
 import noteList from '../cmps/note-list.cmp.js';
-
+import noteFilter from '../cmps/note-filter.cmp.js';
 
 
 export default {
@@ -11,25 +11,42 @@ export default {
         
         <section class="note-app-container">
         <h1 class="note-title">Hey Note app  123</h1>
-            <note-list></note-list>
+            <note-filter @filtered="setFilter"></note-filter> 
+            <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
         </section>
     `,
     data() {
         return{
-         notes: []
+         notes: [],
+         filterBy: null,
+         selectedNote: null
         }
-     
-   
     },
-    methods: {  
-    },
+    methods: {
+        selectNote(noteId) {
+        noteService.getNoteById(noteId)
+            .then(note => this.selectedNote = note)
+            },
+        setFilter(filter) {
+            this.filterBy = filter;
+            },
+        
+        },
     computed: {
+        notesToShow() {
+            if (!this.filterBy) return this.notes;
+            let regex = new RegExp(`${this.filterBy.byName}`, 'i');
+            return this.notes.filter(note => {
+            return regex.test(note.content)
+            })
+        }
     },
     created(){
         this.notes = noteService.getNotes()
     },
     components: {
-     noteList
+    noteFilter,
+    noteList
     }
 }
 
