@@ -10,7 +10,7 @@ export default {
     template: `
         
         <section class="note-app-container">
-        <h1 class="note-title">Hey Note app  123</h1>
+        <h1 class="note-title"></h1>
             <note-filter @filtered="setFilter"></note-filter> 
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
         </section>

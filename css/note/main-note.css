@@ -9,3 +9,12 @@
 .note-app-container {
     background-color: antiquewhite;
 }
+
+.note-preview-container {
+    background-color: darkkhaki;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin: 4px;
+}

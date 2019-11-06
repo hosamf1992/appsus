@@ -28,8 +28,8 @@ let gNotes = [
       content: "Buy milk",
       type:'noteImg',
       createdAt: null,
-      img: "http://coding-academy.org/books-photos/20.jpg",
-      isPind: false,
+      img: '../img/note/milk.jpg',
+      isPinned: false,
       completeBy: null
     },
     {
@@ -38,8 +38,8 @@ let gNotes = [
         content: "Collect Shirt",
         type: 'noteToDo',
         createdAt: null,
-        img: "http://coding-academy.org/books-photos/14.jpg",
-        isPind: false,
+        img: '../img/note/shirt.jpg',
+        isPinned: false,
         completeBy: null
       },
       {
@@ -48,8 +48,8 @@ let gNotes = [
         content: "Do some sport",
         type: 'noteTxt',
         createdAt: null,
-        img: "http://coding-academy.org/books-photos/2.jpg",
-        isPind: false,
+        img: null,
+        isPinned: false,
         completeBy: null
       }
     ]

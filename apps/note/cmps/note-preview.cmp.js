@@ -8,10 +8,9 @@ export default {
     props: ['note'],
     template: `
         <section class="note-preview-container">
-            
+                <p>Note Content: {{ note.content }}</p> 
+                <p>Complete By: {{note.completeBy}}</p>
                 <img :src="note.img"/>
-                <h3>{{ note.content }}</h3> 
-                <p>completeBy: {{note.completeBy}}</p>
          
         </section>
     `,
