@@ -2,11 +2,11 @@ import { noteService } from "../services/note-service.js"
 
 export default {
   template: `
-        <section>
-           <h1>
+        <section class="note">
+           <h1 class="note-text">
                 {{value.content}}
             </h1>
-            <button @click="removeNote(value.id)">x</button>
+            <button @click="removeNote(value.id)" >x</button>
         
         </section>
         `,

@@ -4,7 +4,7 @@ import {noteService} from '../services/note-service.js';
 
 export default {
   template: `
-    <section>
+    <section class="add-note-container flex align-center justify-center">
         <input type="text" placeholder="What's on your mind?" v-model="val.txt" />
         <select v-model="val.type">
             <option value="noteText">Text</option>

@@ -3,15 +3,13 @@
 export default {
     name: 'note-filter',
     template: `
-        <section class="note-filter">
-
-        <form @submit.prevent="onFilter">
-        Filter by Content:
-        <input type="text" placeholder="Search notes" v-model="filterBy.content" />
-        <button>Filter</button>
-        </form>
-
-</section>
+        <section class="note-filter-container">
+            <form @submit.prevent="onFilter">
+                
+                <input type="text" placeholder="Search notes" v-model="filterBy.content" />
+                
+            </form>
+    </section>
 `,
     data() {
         return {

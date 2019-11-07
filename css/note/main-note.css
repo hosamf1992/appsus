@@ -7,18 +7,33 @@
 }
 
 .note-app-container {
-    background-color: antiquewhite;
+    background-color: lightseagreen;
 }
 
-.note-preview-container {
-    background-color: darkkhaki;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: fit-content;
-    height: fit-content;
-    margin: 4px;
-}
 
 .active {
     text-decoration-line: line-through;
+}
+
+
+.nav-container {
+    background-color: lightsalmon;
+    height: 5em;
+}
+
+.add-note-container {
+    background-color: lightsteelblue;
+    height: 5em;
+}
+
+.note {
+    background-color: linen;
+    border: solid 1px black;
+    width: fit-content;
+    padding: 10px;
+    
+}
+
+.note-text {
+    font: initial;
 }

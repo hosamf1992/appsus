@@ -2,7 +2,7 @@ import { noteService } from "../services/note-service.js"
 
 export default {
   template: `
-        <section>
+        <section class="note">
             <img :src="value.img" />
             <button @click="removeNote(value.id)">x</button>
         
