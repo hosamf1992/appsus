@@ -5,6 +5,8 @@ export default {
     name: 'note-update',
     template: `
         <section v-if="isShown" class="note-update-container">
+                <input type="text" placeholder="txt" v-model="txt"
+                         @keyup="updateNote(value.id, txt)"></input>
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
                 <img :src="value.img" />
@@ -15,12 +17,13 @@ export default {
     props: ["value"],
 
     data() { return {
-        isShown: true
+        isShown: true,
+        txt: this.value.content,
+        
+        
     }
 
     },
-    
-
     methods: {
         removeNote(noteId) {
           noteService.removeNote(noteId);
@@ -29,6 +32,9 @@ export default {
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
           },
+        updateNote(noteId, noteNewContent) {
+            noteService.updateNote(noteId, noteNewContent)
+        }
         },
         
     }

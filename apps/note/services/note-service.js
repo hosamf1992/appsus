@@ -6,7 +6,7 @@ import {makeId} from '/js/services/util.service.js'
 export const noteService = {
     getNotes,
     getNoteById,
-    // removeToDo,
+    updateNote,
     removeNote,
     findNote,
     pinNote,
@@ -67,6 +67,12 @@ function findNote(noteId) {
   return note
 }
 
+function updateNote(noteId, noteNewContent) {
+  var idx = gNotes.findIndex(note => note.id === noteId);
+  if (idx !== -1) gNotes[idx].content = noteNewContent;
+  console.log(noteNewContent);
+  storageService.store(NOTES_KEY, gNotes)
+}
 
 let gNotes = [
     {
