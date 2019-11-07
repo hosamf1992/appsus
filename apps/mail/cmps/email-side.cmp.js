@@ -12,6 +12,7 @@ export default {
             <section class="mail-side">
             <router-link  :to="composeEmail"><button class="compose-btn" >+ Compose</button></router-link>
             <email-links></email-links>
+            <h2>status</h2>
             <email-status> </email-status>
 
 

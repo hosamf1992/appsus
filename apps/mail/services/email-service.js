@@ -37,7 +37,7 @@ let gEmails = [
     id: 'acv',
     email: 'puki@gmail.com',
     sentFrom: 'Puki',
-    subject: 'HELLO World',
+    subject: 'test',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
 
     isRead: false,

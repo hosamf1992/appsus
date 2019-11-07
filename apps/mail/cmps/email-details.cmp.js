@@ -5,9 +5,10 @@ export default {
     props: ['opendemail'],
     template: `
         <div class="list-none opened-email" >
-            <h1> {{opendemail.subject}}</h1>
-            <h2> {{opendemail.sentFrom}}</h2>
-            <p> {{opendemail.email}}</p>
+         <h2>Subject: {{opendemail.subject}}</h2>
+            <h2>from: {{opendemail.sentFrom}}</h2>
+         
+            <p>Email: {{opendemail.email}}</p>
             <p> {{opendemail.body}}</p>
            
             <button @click.stop="deleteEmail(opendemail.id)">delete</button>

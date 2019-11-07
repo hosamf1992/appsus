@@ -50,7 +50,7 @@ export default {
 
 
         eventBus.$on('filter-me', (msg) => {
-         
+
             this.results = this.results.filter(mails => (mails.isStarred === true))
 
         });
@@ -58,7 +58,7 @@ export default {
         eventBus.$on('inbox-filter', (msg) => {
 
 
-             emailServices.getEmails().then(res => this.results = res);
+            emailServices.getEmails().then(res => this.results = res);
             // this.results = this.results.filter(mails => (mails.isStarred === true))
 
         })
@@ -79,20 +79,20 @@ export default {
             temp = this.results;
             if (!this.filterBy) return this.results;
 
-            var regex = new RegExp(`${this.filterBy.name}`, 'i');
+            let regex = new RegExp(`${this.filterBy.name}`, 'i');
 
             if (this.filterBy.isRead === 'Read') {
-                return temp.filter(mails => (mails.isRead === true));
+                return temp.filter(mails => (mails.isRead === true && regex.test(mails.subject)));
 
             }
             if (this.filterBy.isRead === 'Unread') {
-                return temp = this.results.filter(mails => (mails.isRead === false));
+                return temp = this.results.filter(mails => (mails.isRead === false  && regex.test(mails.subject)));
             }
 
             if (this.filterBy.isRead === 'All') {
                 return temp
             }
-           
+
         },
 
 
