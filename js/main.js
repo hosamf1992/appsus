@@ -10,7 +10,7 @@ var options = {
     el: '#my-app',
     template: `
     <section>
-    <h1>heyy</h1>
+   
     <app-header>  </app-header>
 
     </section>

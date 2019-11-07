@@ -15,11 +15,10 @@ Vue.config.productionTip = false
 export default {
     template: `
      
-      <section>
-     <h1 class="email-title" >Hey mail app</h1>
+      <section class="email-container">
      
-     <email-side ></email-side>
-     <router-view></router-view>
+      <email-side ></email-side>
+      <router-view></router-view>
 
         </section>
   

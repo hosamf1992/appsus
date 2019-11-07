@@ -1,48 +1,51 @@
 'use sctrict'
 
 import emailStatus from '../cmps/email-status.cmp.js';
-import {emailServices } from '../services/email-service.js'
+import emailLinks from '../cmps/links-side.cmp.js';
+import { emailServices } from '../services/email-service.js'
 // import composeEmail from '../cmps/email-compose.cmp.js';
 
 
-{/* <email-status :status="emailStatus"> </email-status> */}
+{/* <email-status :status="emailStatus"> </email-status> */ }
 
 export default {
     template: `
             <section class="mail-side">
+            <router-link  :to="composeEmail"><button class="compose-btn" >+ Compose</button></router-link>
+            <email-links></email-links>
             <email-status> </email-status>
-            <router-link  :to="composeEmail"><button >+ Compose</button></router-link>
 
 
             </section>
     `,
     data() {
         return {
-        
+
         }
     },
     computed: {
-        
+
         // emailStatus() {
         //     return emailServices.readMailStatus();
         //   },
-          composeEmail() {
+        composeEmail() {
             return `/email/compose`
         },
     },
 
-    methods:{
+    methods: {
 
-       
-       
+
+
     },
 
     created() {
-   
-       
+
+
     },
     components: {
         emailStatus,
+        emailLinks
 
     }
 

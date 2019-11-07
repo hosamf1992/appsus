@@ -7,21 +7,20 @@ export default {
     template: `
     <section class="email-form">
      <h1>New Message</h1>
-    <form @submit.prevent="send">
+    <form class="email-form grid" @submit.prevent="send">
     <input  type="text" placeholder="To:" v-model="newMail.to" />
     <input  type="text" placeholder="From:" v-model="newMail.from" />
     <input  type="text" placeholder="Bcc:" v-model="newMail.bcc" />
     <input  type="text" placeholder="Subject:" v-model="newMail.subject" />
 
  
-    <textarea placeholder="Body" v-model="newMail.body" ></textarea>
+    <textarea class="area-txt" placeholder="Body" v-model="newMail.body" ></textarea>
     
     <button >Send</button>
   
 
 </form>
-<router-link :to="deleteEmail"> <button >Delete</button> </router-link>
-<router-view></router-view>
+ <router-link :to="deleteEmail"> <button >Delete</button> </router-link>
 
     </section>
     `,

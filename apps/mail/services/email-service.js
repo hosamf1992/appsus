@@ -11,7 +11,8 @@ export const emailServices = {
   readMailStatus,
   sendEmail,
   removeEmail,
-  markRead
+  markRead,
+  markStar
 
 
 }
@@ -24,7 +25,8 @@ let gEmails = [
     email: 'nana@gmail.com',
     sentFrom: 'Nana',
     subject: 'HELLO DUDE',
-    body: "mi est eros convallis auctor arcu dapibus himenaeos",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
     isRead: false,
     sentAt: getTime(),
     isStarred: false,
@@ -35,7 +37,8 @@ let gEmails = [
     email: 'puki@gmail.com',
     sentFrom: 'Puki',
     subject: 'HELLO World',
-    body: "HELLO World HELLO World HELLO World HELLO World",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
+
     isRead: false,
     sentAt: getTime(),
     isStarred: false,
@@ -46,7 +49,8 @@ let gEmails = [
     email: 'shmoki@gmail.com',
     sentFrom: 'Shmoki',
     subject: 'HELLO JavaScript',
-    body: "HELLO JavaScript HELLO JavaScript HELLO JavaScript",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
     isRead: false,
     sentAt: getTime(),
     isStarred: false,
@@ -170,3 +174,13 @@ function getTime() {
   }
 
 }
+
+function markStar(id){
+  let emailIdx = gEmails.findIndex(email => email.id === id);
+  let toggleStar = gEmails[emailIdx].isStarred;
+  gEmails[emailIdx].isStarred = !toggleStar;
+  storageService.store(MAIL_KEY, gEmails);
+  return Promise.resolve();
+
+}
+

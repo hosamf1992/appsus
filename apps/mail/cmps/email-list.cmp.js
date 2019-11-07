@@ -15,7 +15,7 @@ export default {
 
 
     <email-filter  @filtered="setFilter"></email-filter>
-        <ul >
+        <ul class="mails-list " >
 
            <email-preview  v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 
    
