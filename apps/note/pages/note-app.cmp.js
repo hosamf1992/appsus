@@ -18,8 +18,6 @@ export default {
         <note-add></note-add>
         <note-update class="modal" v-if="selectedNote" :value="note"></note-update>
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
-           
-            
         </section>
     `,
     data() {
