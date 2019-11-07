@@ -19,12 +19,14 @@ export default {
     return {
       val: {
           type: '',
-          txt:''
+          txt: ''
       }
     }
   },
+
   methods: {
     addNote() {
+      console.log(this.val)
     noteService.addNote(this.val);
     }
   },

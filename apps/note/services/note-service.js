@@ -6,7 +6,7 @@ import {makeId} from '/js/services/util.service.js'
 export const noteService = {
     getNotes,
     getNoteById,
-    removeToDo,
+    // removeToDo,
     removeNote,
     addNote
 }
@@ -28,21 +28,19 @@ function addNote(note) {
   
 let newNote = {
   id: makeId(),
-      content: note.txt,
-      type:note.type,
-      createdAt: Date.now(),
-      img: '',
-      isPinned: false,
-      color: '',
-}
-if(note.type === "noteTodo") {
-  newNote.content = {toDoId: makeId(), isCompleted: false, toDoContent: note.txt}
+  content: note.txt,
+  type: note.type,
+  createdAt: Date.now(),
+  img: '',
+  isPinned: false,
+  color: '',
 }
 
 if(note.type === "noteImg") {
   newNote.img = newNote.content
   newNote.content = ''
 }
+console.log(newNote.content)
   gNotes.unshift(newNote)
   storageService.store(NOTES_KEY, gNotes)
 }
@@ -53,12 +51,12 @@ function removeNote(noteId) {
   storageService.store(NOTES_KEY, gNotes)
 }
 
-function removeToDo(noteId, toDoId) {
-  var noteIdx = gNotes.findIndex(note => note.id === noteId)
-  var toDoIdx = gNotes[noteIdx].content.findIndex(content => content.toDoId === toDoId)
-  if (noteIdx !== -1 && toDoIdx !== -1) gNotes[noteIdx].content.splice(toDoIdx,1)
-  storageService.store(NOTES_KEY, gNotes)
-}
+// function removeToDo(noteId) {
+//   var noteIdx = gNotes.findIndex(note => note.id === noteId)
+//   // var toDoIdx = gNotes[noteIdx].content.findIndex(content => content.toDoId === toDoId)
+//   if (noteIdx !== -1) gNotes.splice(toDoIdx,1)
+//   storageService.store(NOTES_KEY, gNotes)
+// }
 
 let gNotes = [
     {
@@ -72,19 +70,7 @@ let gNotes = [
     },
     {
         id: makeId(),
-        content: [ {toDoId:makeId(),
-                    isCompleted: false,
-                    toDoContent: "Collect Shirt",
-                },
-                  {toDoId:makeId(),
-                    isCompleted: true,
-                    toDoContent: "Visit barber",
-                },
-                {toDoId:makeId(),
-                  isCompleted: false,
-                  toDoContent: "Get car to repair",
-              }
-        ],
+        content: "Visit barber collect shirt take car to repair",
         type: 'noteTodo',
         createdAt: null,
         img: '',
@@ -101,3 +87,17 @@ let gNotes = [
         color: 'orange'
       }
     ]
+
+    // content: [ {toDoId:makeId(),
+        //             isCompleted: false,
+        //             toDoContent: "Collect Shirt",
+        //         },
+        //           {toDoId:makeId(),
+        //             isCompleted: true,
+        //             toDoContent: "Visit barber",
+        //         },
+        //         {toDoId:makeId(),
+        //           isCompleted: false,
+        //           toDoContent: "Get car to repair",
+        //       }
+        // ],
