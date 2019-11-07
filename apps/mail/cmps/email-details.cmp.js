@@ -4,14 +4,18 @@ import { emailServices } from '../services/email-service.js';
 export default {
     props: ['opendemail'],
     template: `
-        <li class="list-none opened-email" >
+        <div class="list-none opened-email" >
             <h1> {{opendemail.subject}}</h1>
             <h2> {{opendemail.sentFrom}}</h2>
             <p> {{opendemail.email}}</p>
-            <p> {{opendemail.body}}</h1>
-            <p>time</p>
+            <p> {{opendemail.body}}</p>
+           
+            <button @click.stop="deleteEmail(opendemail.id)">delete</button>
+            <button @click.stop="markEmail(opendemail.id)">Mark</button>
+
+           
           
-        </li>
+        </div>
     `,
 
     data() {
@@ -27,12 +31,21 @@ export default {
 
     methods: {
 
-      
+        deleteEmail(id) {
+            emailServices.removeEmail(id).then(console.log('removed'))
+        },
+
+        markEmail(id) {
+            emailServices.markRead(id).then(console.log('email marked '))
+
+        },
+
+
 
     },
 
     created() {
-      
+
 
 
     }

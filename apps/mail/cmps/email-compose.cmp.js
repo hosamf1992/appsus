@@ -3,7 +3,7 @@ import { emailServices } from '../services/email-service.js'
 
 
 export default {
-   
+
     template: `
     <section class="email-form">
      <h1>New Message</h1>
@@ -20,7 +20,9 @@ export default {
   
 
 </form>
-<button >Delete</button>
+<router-link :to="deleteEmail"> <button >Delete</button> </router-link>
+<router-view></router-view>
+
     </section>
     `,
 
@@ -41,15 +43,27 @@ export default {
     }
 
     , computed: {
+        deleteEmail() {
+            console.log('delete')
+            return `/email/list`
+        },
 
 
     },
 
     methods: {
         send() {
-            
-            emailServices.sendEmail(this.newMail);
+            if (this.newMail.to === '' || this.newMail.subject === '' || this.newMail.body === '') return;
+
+
+            emailServices.sendEmail(this.newMail).then(
+                console.log('email sent'),
+            );
+            this.$router.push('list')
+
+
         }
+
     },
     components: {
 

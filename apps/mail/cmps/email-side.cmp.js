@@ -5,27 +5,27 @@ import {emailServices } from '../services/email-service.js'
 // import composeEmail from '../cmps/email-compose.cmp.js';
 
 
+{/* <email-status :status="emailStatus"> </email-status> */}
 
 export default {
     template: `
             <section class="mail-side">
-            <email-status :status="emailStatus"> </email-status>
+            <email-status> </email-status>
             <router-link  :to="composeEmail"><button >+ Compose</button></router-link>
-            <router-view></router-view>
 
 
             </section>
     `,
     data() {
         return {
-         isComposed:true,
+        
         }
     },
     computed: {
         
-        emailStatus() {
-            return emailServices.readMailStatus();
-          },
+        // emailStatus() {
+        //     return emailServices.readMailStatus();
+        //   },
           composeEmail() {
             return `/email/compose`
         },
@@ -43,7 +43,6 @@ export default {
     },
     components: {
         emailStatus,
-        // composeEmail
 
     }
 

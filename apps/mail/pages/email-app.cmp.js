@@ -10,15 +10,16 @@ Vue.config.productionTip = false
 
 
 
+{/* <email-filter  @filtered="setFilter"></email-filter> */}
 
 export default {
     template: `
      
       <section>
      <h1 class="email-title" >Hey mail app</h1>
-     <email-filter  @filtered="setFilter"></email-filter>
-     <email-list  :emails="emailsToshow" ></email-list>
+     
      <email-side ></email-side>
+     <router-view></router-view>
 
         </section>
   
@@ -26,7 +27,7 @@ export default {
     data() {
         return {
             emails: [],
-            filterBy: null,
+            // filterBy: null,
           
 
         }
@@ -34,26 +35,24 @@ export default {
     },
     methods: {
 
-        setFilter(filterBy) {
-            console.log('Parent got filter:', filterBy);
-            this.filterBy = filterBy
-        },
+        // setFilter(filterBy) {
+        //     console.log('Parent got filter:', filterBy);
+        //     this.filterBy = filterBy
+        // },
       
-       
-        
-
+    
     },
     computed: {
 
-        emailsToshow() {
+        // emailsToshow() {
 
-            if (!this.filterBy) return this.emails;
+        //     if (!this.filterBy) return this.emails;
 
             // else {
             //     this.emails = emailServices.filterEmails(this.filterBy.isRead, this.filterBy.txt)
             // }
 
-        },
+        // },
       
        
 
@@ -70,7 +69,7 @@ export default {
     },
     components: {
         emailList,
-        emailFilter,
+        // emailFilter,
         emailSide
 
 

@@ -1,13 +1,14 @@
 
+import {emailServices } from '../services/email-service.js'
 
 
 
 export default {
-    props: ['status'],
+    // props: ['status'],
     template: `
     <section class="email-status">
           <div class="email-outer">
-          <span class="text-center status-num ">{{status}}%</span>
+          <span class="text-center status-num ">{{emailStatus}}%</span>
           <div :style="{width: status+'%'}" class="email-inner"></div>
         
           </div>
@@ -18,7 +19,7 @@ export default {
 
     data() {
         return {
-          
+       
            
         }
     },
@@ -27,11 +28,13 @@ export default {
        
     },
     created() {
-      
+       
     }
 
     , computed: {
-
+        emailStatus() {
+                return this.status= emailServices.readMailStatus();
+              },
 
     },
     components: {
