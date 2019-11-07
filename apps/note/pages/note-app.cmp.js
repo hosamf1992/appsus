@@ -4,7 +4,7 @@ import {noteService} from '../services/note-service.js';
 import noteList from '../cmps/note-list.cmp.js';
 import noteFilter from '../cmps/note-filter.cmp.js';
 import noteAdd from '../cmps/add-note.cmp.js';
-
+import noteUpdate from '../cmps/note-update.cmp.js'
 
 export default {
     name: 'note-app',
@@ -16,20 +16,26 @@ export default {
             <h1 class="note-title"> Miss Keep</h1>
         </nav>
         <note-add></note-add>
+        <note-update class="modal" v-if="selectedNote" :value="note"></note-update>
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
+           
+            
         </section>
     `,
     data() {
         return{
          notes: [],
          filterBy: null,
-         selectedNote: null
+         selectedNote: null,
+         note: {}
         }
     },
     methods: {
         selectNote(noteId) {
-        noteService.getNoteById(noteId)
-            .then(note => this.selectedNote = note)
+        this.selectedNote = true;
+        let selectedNote = noteService.findNote(noteId);
+        this.note = selectedNote;
+        
             },
         setFilter(filter) {
             this.filterBy = filter;
@@ -50,6 +56,7 @@ export default {
     components: {
     noteFilter,
     noteList,
+    noteUpdate,
     noteAdd
     }
 }

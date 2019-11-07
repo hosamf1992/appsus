@@ -38,3 +38,11 @@
 .note-text {
     font: initial;
 }
+
+.modal {
+    background-color: limegreen;
+    position: absolute;
+    left: 40%;
+    width:fit-content;
+    padding: 2em;
+}

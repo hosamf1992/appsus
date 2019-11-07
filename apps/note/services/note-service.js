@@ -8,6 +8,7 @@ export const noteService = {
     getNoteById,
     // removeToDo,
     removeNote,
+    findNote,
     pinNote,
     addNote
 }
@@ -61,7 +62,10 @@ gNotes.unshift(0, 1, note)
 storageService.store(NOTES_KEY, gNotes)
 }
 
-
+function findNote(noteId) {
+  let note = gNotes.find(note => note.id === noteId);
+  return note
+}
 
 
 let gNotes = [
@@ -69,7 +73,7 @@ let gNotes = [
       id: makeId(),
       content: "Buy milk",
       type:'noteImg',
-      createdAt: null,
+      createdAt: new Date().getHours(),
       img: '../img/note/milk.jpg',
       isPinned: false,
       color: 'blue'
@@ -78,7 +82,7 @@ let gNotes = [
         id: makeId(),
         content: "Visit barber, collect shirt, take car to repair",
         type: 'noteTodo',
-        createdAt: null,
+        createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
         color: 'red'
@@ -87,7 +91,7 @@ let gNotes = [
         id: makeId(),
         content: "Do some sport",
         type: 'noteText',
-        createdAt: null,
+        createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
         color: 'orange'
