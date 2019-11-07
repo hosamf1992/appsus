@@ -1,14 +1,14 @@
 
-import {emailServices } from '../services/email-service.js'
+import { emailServices } from '../services/email-service.js'
 
 
 
 export default {
-    // props: ['status'],
+
     template: `
     <section class="email-status">
           <div class="email-outer">
-          <span class="text-center status-num ">{{emailStatus}}%</span>
+          <span class="text-center status-num ">{{status}}%</span>
           <div :style="{width: status+'%'}" class="email-inner"></div>
         
           </div>
@@ -19,22 +19,36 @@ export default {
 
     data() {
         return {
-       
-           
+            status: null,
+
         }
     },
     methods: {
 
-       
+
     },
     created() {
-       
+        emailServices.readMailStatus()
+            .then(res => this.status = res);
+
+        eventBus.$on('change-status', (msg) => {
+
+            emailServices.readMailStatus()
+                .then(res => this.status = res)
+        });
+
     }
 
     , computed: {
         emailStatus() {
-                return this.status= emailServices.readMailStatus();
-              },
+
+
+        },
+
+
+    },
+
+    watch: {
 
     },
     components: {

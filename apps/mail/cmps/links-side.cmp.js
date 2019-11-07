@@ -2,31 +2,36 @@
 import { emailServices } from '../services/email-service.js'
 
 
-{/* <div> <router-link :to="inboxLink"> Inbox </router-link>  </div>
-<div @click="filterStared"> <h2><span>☆</span> Starred </h2> */}
 
 export default {
 
-    template: `
-    <section >
-        </div>
 
+    template: `
+<section >
+  
+     <router-link :to="inboxLink"> <h2  @click="reportFilter" > Inbox</h2> </router-link>  
+    
+    <div @click="filterStared"> <h2> <span>☆</span> Starred </h2>  </div>
+   
           </section>
                
         `,
 
     data() {
         return {
-
+           
 
         }
     },
     methods: {
-        inboxLink() {
+        filterStared() {
+            eventBus.$emit('filter-me', 'filter');
+            // return this.$router.push({ name: '/email/list' })
 
-            return `/email/list`
 
-
+        },
+        reportFilter(){
+            eventBus.$emit('inbox-filter', 'filter');
         }
 
 
@@ -36,10 +41,15 @@ export default {
     }
 
     , computed: {
-        // filterStared(){
-
+        inboxLink() {
            
-        
+            return `/email/list`
+
+
+        }
+
+
+
 
     },
     components: {

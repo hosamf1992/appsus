@@ -58,6 +58,7 @@ export default {
             emailServices.sendEmail(this.newMail).then(
                 console.log('email sent'),
             );
+            eventBus.$emit('change-status', 'status');
             this.$router.push('list')
 
 

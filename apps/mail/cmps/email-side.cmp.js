@@ -6,7 +6,6 @@ import { emailServices } from '../services/email-service.js'
 // import composeEmail from '../cmps/email-compose.cmp.js';
 
 
-{/* <email-status :status="emailStatus"> </email-status> */ }
 
 export default {
     template: `

@@ -1,6 +1,7 @@
 import emailPreview from './email-preview.cmp.js';
 import { emailServices } from '../services/email-service.js'
 import emailFilter from '../cmps/email-filter.cmp.js';
+import { eventBus } from '../../../js/services/event-bus.service.js'
 
 
 
@@ -38,17 +39,39 @@ export default {
             console.log('Parent got filter:', filterBy);
             this.filterBy = filterBy
 
-           
+
         },
     },
     created() {
-       
-        this.results = emailServices.getEmails();
-        console.log(this.results)
+
+        emailServices.getEmails().then(res => this.results = res);
+        console.log(this.results);
+
+
+
+        eventBus.$on('filter-me', (msg) => {
+         
+            this.results = this.results.filter(mails => (mails.isStarred === true))
+
+        });
+
+        eventBus.$on('inbox-filter', (msg) => {
+
+
+             emailServices.getEmails().then(res => this.results = res);
+            // this.results = this.results.filter(mails => (mails.isStarred === true))
+
+        })
+
+
+
 
     }
 
     , computed: {
+
+
+
 
         emailToShow() {
 
@@ -69,7 +92,10 @@ export default {
             if (this.filterBy.isRead === 'All') {
                 return temp
             }
-        }
+           
+        },
+
+
 
     },
     components: {
