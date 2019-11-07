@@ -5,12 +5,13 @@ import noteTodo from './note-todo.cmp.js'
 import noteImg from './note-img.cmp.js'
 import {noteService} from '../services/note-service.js';
 
+
 export default {
     props: ['notes'],
     template: `
         <section class="note-list-container">
             <div v-for="(note, idx) in notes">
-                    <component :is="note.type"  :value="note"></component>
+                    <component :is="note.type"  :value="note" @click.native="linkClicked"></component>
             </div>
         </section>
     `,
@@ -23,6 +24,9 @@ export default {
         onSelectNote(noteId) {
             this.selectedNote = noteId;
             this.$emit('selected', this.selectedNote);
+            },
+            linkClicked(){
+            console.log('i was clicked')
             }
     },
     computed: {

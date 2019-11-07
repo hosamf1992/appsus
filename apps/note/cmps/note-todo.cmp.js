@@ -27,6 +27,9 @@ export default {
       noteService.pinNote(note, noteId)
       },
     },
+    openModal(value) {
+      console.log('hi')
+    },
   computed: {
     splitValue() {
       let str = this.value.content

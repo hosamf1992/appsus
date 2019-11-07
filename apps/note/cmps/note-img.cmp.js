@@ -4,6 +4,7 @@ export default {
   template: `
         <section class="note">
             <img :src="value.img" />
+            {{value.content}}
             <button @click="removeNote(value.id)">x</button>
             <button @click="pinNote(value, value.id)">Pinned</button>
         </section>
