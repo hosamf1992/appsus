@@ -18,3 +18,7 @@
     height: fit-content;
     margin: 4px;
 }
+
+.active {
+    text-decoration-line: line-through;
+}
