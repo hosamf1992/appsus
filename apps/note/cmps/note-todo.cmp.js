@@ -7,7 +7,7 @@ export default {
           <h1 class="toDo" :toDoTxts="splitValue" v-for="toDoTxt in splitValue" 
           @click="isActive = !isActive" :class="{active: isActive}">{{toDoTxt}}</h1>
             <button @click="removeNote(value.id)">x</button>
-           
+            <button @click="pinNote(value, value.id)">Pinned</button>
          
         </section>
         `,
@@ -22,8 +22,10 @@ export default {
   methods: {
     removeNote(noteId) {
       noteService.removeNote(noteId)
-  },
-    
+      },
+    pinNote(note, noteId) {
+      noteService.pinNote(note, noteId)
+      },
     },
   computed: {
     splitValue() {

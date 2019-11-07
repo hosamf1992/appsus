@@ -12,6 +12,7 @@ export const noteService = {
     addNote
 }
 
+
 const NOTES_KEY = 'notes'
 
 function getNotes() {
@@ -52,11 +53,16 @@ function removeNote(noteId) {
 }
 
 
-function pinNote(noteId){
-var pinnedNote = gNotes.findIndex(note => note.id === noteId);
-gNotes[pinnedNote].isPinned = true;
+function pinNote(note, noteId){
+let idx = gNotes.findIndex(noteTodo => noteTodo.id === noteId);
+gNotes[idx].isPinned = true;
+gNotes.splice(idx,1)
+gNotes.unshift(0, 1, note)
 storageService.store(NOTES_KEY, gNotes)
 }
+
+
+
 
 let gNotes = [
     {
