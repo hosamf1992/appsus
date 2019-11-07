@@ -3,12 +3,13 @@
 
 
 .note-title{
-    color:red
+    color:white;
+    font: xx-large;
 }
 
-/* .note-app-container {
-    background-color: black;
-} */
+.note-app-container {
+    background-color:#202124;
+}
 
 
 .active {
@@ -17,21 +18,22 @@
 
 
 .nav-container {
-    background-color: lightsalmon;
+    background-color: #202124;
     height: 5em;
 }
 
 .add-note-container {
-    background-color: lightsteelblue;
+    background-color: #202124;
     height: 5em;
 }
 
 .note {
-    background-color: linen;
-    border: solid 1px black;
+    background-color: #202124;
+    border: solid 1px white;
     width: fit-content;
     padding: 10px;
     margin: 1em;
+    color: white;
     
 }
 
