@@ -1,7 +1,8 @@
 'use strict'
 
-import {storageService} from '/js/services/util.service.js'
-import {makeId} from '/js/services/util.service.js'
+import {storageService} from '../../../js/services/util.service.js'
+// import {makeId} from '/js/services/util.service.js'
+import {makeId} from '../../../js/services/util.service.js'
 
 export const noteService = {
     getNotes,

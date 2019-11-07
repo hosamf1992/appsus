@@ -2,13 +2,13 @@
 import { emailServices } from '../services/email-service.js'
 
 
+{/* <div> <router-link :to="inboxLink"> Inbox </router-link>  </div>
+<div @click="filterStared"> <h2><span>☆</span> Starred </h2> */}
 
 export default {
 
     template: `
     <section >
-        <div> <router-link :to="inboxLink"> Inbox </router-link>  </div>
-        <div> <h2><span>☆</span> Starred </h2>
         </div>
 
           </section>
@@ -36,7 +36,10 @@ export default {
     }
 
     , computed: {
+        // filterStared(){
 
+           
+        
 
     },
     components: {
