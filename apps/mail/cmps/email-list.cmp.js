@@ -1,14 +1,23 @@
 import emailPreview from './email-preview.cmp.js';
+import { emailServices } from '../services/email-service.js'
+import emailFilter from '../cmps/email-filter.cmp.js';
+
+
 
 
 
 export default {
-    props: ['emails'],
     template: `
+
+
+   
     <section class="email-list-container">
+
+
+    <email-filter  @filtered="setFilter"></email-filter>
         <ul >
 
-           <email-preview  v-for="currEmail in results" :key="currEmail.id"  :email="currEmail"></email-preview> 
+           <email-preview  v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 
    
         </ul>
     </section>
@@ -16,21 +25,56 @@ export default {
 
     data() {
         return {
-            results: []
+            results: [],
+
+            filterBy: null,
+
         }
     },
+
+    methods: {
+
+        setFilter(filterBy) {
+            console.log('Parent got filter:', filterBy);
+            this.filterBy = filterBy
+
+           
+        },
+    },
     created() {
-        this.results = this.emails;
-        console.log(this.results)
        
+        this.results = emailServices.getEmails();
+        console.log(this.results)
+
     }
 
-    ,computed: {
+    , computed: {
 
+        emailToShow() {
+
+            let temp = [];
+            temp = this.results;
+            if (!this.filterBy) return this.results;
+
+            var regex = new RegExp(`${this.filterBy.name}`, 'i');
+
+            if (this.filterBy.isRead === 'Read') {
+                return temp.filter(mails => (mails.isRead === true));
+
+            }
+            if (this.filterBy.isRead === 'Unread') {
+                return temp = this.results.filter(mails => (mails.isRead === false));
+            }
+
+            if (this.filterBy.isRead === 'All') {
+                return temp
+            }
+        }
 
     },
     components: {
         emailPreview,
+        emailFilter
 
     }
 }

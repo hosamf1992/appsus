@@ -1,4 +1,5 @@
 import emailDetails from './email-details.cmp.js';
+import { emailServices } from '../services/email-service.js'
 
 
 
@@ -6,10 +7,10 @@ import emailDetails from './email-details.cmp.js';
 export default {
     props: ['email'],
     template: `
-            <li @click="openEmail,opened=!opened"  class="flex space-around">
+            <li @click="openEmail"  class="flex space-around">
                 <h1> {{email.sentFrom}}</h1>
                 <h1> {{email.subject}}</h1>
-                <p>time</p>
+                <p>{{email.sentAt.hours}}:{{email.sentAt.mins}}</p>
                 <email-details :opendemail="email" v-if="opened"></email-details>
                 </li>
                
@@ -25,8 +26,9 @@ export default {
     methods: {
 
         openEmail() {
-            console.log(this.email);
-           
+            
+            this.opened=!this.opened
+
         }
     },
     created() {

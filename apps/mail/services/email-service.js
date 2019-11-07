@@ -9,8 +9,10 @@ export const emailServices = {
   getEmailById,
   filterEmails,
   readMailStatus,
-  sendEmail
- 
+  sendEmail,
+  removeEmail,
+  markRead
+
 
 }
 
@@ -24,7 +26,7 @@ let gEmails = [
     subject: 'HELLO DUDE',
     body: "mi est eros convallis auctor arcu dapibus himenaeos",
     isRead: false,
-    sentAt: 1551133930594,
+    sentAt: getTime(),
     isStarred: false,
 
   },
@@ -34,8 +36,8 @@ let gEmails = [
     sentFrom: 'Puki',
     subject: 'HELLO World',
     body: "HELLO World HELLO World HELLO World HELLO World",
-    isRead: true,
-    sentAt: 1551133930231,
+    isRead: false,
+    sentAt: getTime(),
     isStarred: false,
 
   },
@@ -45,8 +47,8 @@ let gEmails = [
     sentFrom: 'Shmoki',
     subject: 'HELLO JavaScript',
     body: "HELLO JavaScript HELLO JavaScript HELLO JavaScript",
-    isRead: true,
-    sentAt: 1551133930131,
+    isRead: false,
+    sentAt: getTime(),
     isStarred: false,
 
   }
@@ -54,7 +56,7 @@ let gEmails = [
 ];
 
 
-window.emails=gEmails;
+window.emails = gEmails;
 
 function getEmails() {
 
@@ -102,6 +104,7 @@ function filterEmails(filter, txt) {
 
 function readMailStatus() {
   let status;
+  if (gEmails.length === 0) return status = 0;
   let readedMails = gEmails.filter(mail => (mail.isRead === true));
   console.log(readedMails)
 
@@ -123,7 +126,7 @@ function sendEmail(mail) {
     subject: mail.subject,
     body: mail.body,
     isRead: false,
-    sentAt: Date.now(),
+    sentAt: getTime(),
     isStarred: false,
 
 
@@ -131,5 +134,39 @@ function sendEmail(mail) {
 
   gEmails.unshift(newMail);
   storageService.store(MAIL_KEY, gEmails);
+  return Promise.resolve();
+
+
+
+}
+
+function removeEmail(id) {
+  let emailIdx = gEmails.findIndex(email => email.id === id)
+  gEmails.splice(emailIdx, 1)
+  storageService.store(MAIL_KEY, gEmails);
+  return Promise.resolve();
+
+
+}
+
+function markRead(id) {
+  let emailIdx = gEmails.findIndex(email => email.id === id);
+  let toggleMark = gEmails[emailIdx].isRead;
+  gEmails[emailIdx].isRead = !toggleMark;
+  storageService.store(MAIL_KEY, gEmails);
+  return Promise.resolve();
+
+
+}
+
+
+function getTime() {
+  let date = new Date();
+  let hours = date.getHours();
+  let mins = date.getMinutes();
+  return {
+    hours: (hours < 10 ? '0' : '') + hours,
+    mins: (mins < 10 ? '0' : '') + mins,
+  }
 
 }
