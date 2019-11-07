@@ -40,7 +40,6 @@ if(note.type === "noteImg") {
   newNote.img = newNote.content
   newNote.content = ''
 }
-console.log(newNote.content)
   gNotes.unshift(newNote)
   storageService.store(NOTES_KEY, gNotes)
 }
@@ -50,13 +49,6 @@ function removeNote(noteId) {
   if (idx !== -1) gNotes.splice(idx,1)
   storageService.store(NOTES_KEY, gNotes)
 }
-
-// function removeToDo(noteId) {
-//   var noteIdx = gNotes.findIndex(note => note.id === noteId)
-//   // var toDoIdx = gNotes[noteIdx].content.findIndex(content => content.toDoId === toDoId)
-//   if (noteIdx !== -1) gNotes.splice(toDoIdx,1)
-//   storageService.store(NOTES_KEY, gNotes)
-// }
 
 let gNotes = [
     {
@@ -70,7 +62,7 @@ let gNotes = [
     },
     {
         id: makeId(),
-        content: "Visit barber collect shirt take car to repair",
+        content: "Visit barber, collect shirt, take car to repair",
         type: 'noteTodo',
         createdAt: null,
         img: '',
@@ -87,17 +79,3 @@ let gNotes = [
         color: 'orange'
       }
     ]
-
-    // content: [ {toDoId:makeId(),
-        //             isCompleted: false,
-        //             toDoContent: "Collect Shirt",
-        //         },
-        //           {toDoId:makeId(),
-        //             isCompleted: true,
-        //             toDoContent: "Visit barber",
-        //         },
-        //         {toDoId:makeId(),
-        //           isCompleted: false,
-        //           toDoContent: "Get car to repair",
-        //       }
-        // ],

@@ -26,7 +26,6 @@ export default {
 
   methods: {
     addNote() {
-      console.log(this.val)
     noteService.addNote(this.val);
     }
   },

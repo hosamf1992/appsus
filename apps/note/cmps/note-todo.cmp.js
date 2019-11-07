@@ -1,13 +1,11 @@
 import { noteService } from "../services/note-service.js"
 
+
 export default {
   template: `
         <section>
-           <h1>
-                {{value.content}}
-            </h1>
+          <h1 :toDoTxts="splitValue" v-for="txt in splitValue">{{txt}}</h1>
             <button @click="removeNote(value.id)">x</button>
-        
         </section>
         `,
   props: ["value"],
@@ -18,6 +16,10 @@ export default {
   }
     },
   computed: {
-    
+    splitValue() {
+      let str = this.value.content
+      let splitStr = str.split(", ")
+      return splitStr
+    }
   }
 };
