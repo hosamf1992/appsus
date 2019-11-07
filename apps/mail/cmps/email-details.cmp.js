@@ -12,8 +12,11 @@ export default {
            
             <button @click.stop="deleteEmail(opendemail.id)">delete</button>
             <button @click.stop="markEmail(opendemail.id)">Mark</button>
+            <router-link :to="expandEmail"> <button >Expand</button> </router-link>
 
-           
+
+            <router-view></router-view>
+
           
         </div>
     `,
@@ -26,7 +29,16 @@ export default {
         }
     },
     computed: {
+       
+        expandEmail(){
+            console.log(this.opendemail.id)
 
+            console.log('ffff')
+            // eventBus.$emit('Id', payLoad);
+            return `details/${this.opendemail.id}`
+           
+
+        }
     },
 
     methods: {
@@ -39,6 +51,8 @@ export default {
             emailServices.markRead(id).then(console.log('email marked '))
 
         },
+       
+      
 
 
 

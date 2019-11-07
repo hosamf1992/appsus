@@ -5,7 +5,7 @@ export default {
 
     template: `
        <section>
-      <h1>Header</h1>
+     
       <nav>
                 <router-link to="/note" >Note</router-link> |
                 <router-link to="/email/list" >Email</router-link> |
