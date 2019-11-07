@@ -1,8 +1,6 @@
 import emailDetails from './email-details.cmp.js';
 
-{/* <router-link :to="emailDetailsLink"> */ }
 
-// </router-link>
 
 
 export default {
@@ -20,7 +18,7 @@ export default {
     data() {
         return {
             opened: false,
-            // emailId=this.email.id
+        
            
         }
     },
@@ -28,7 +26,7 @@ export default {
 
         openEmail() {
             console.log(this.email);
-            // this.opened=true
+           
         }
     },
     created() {

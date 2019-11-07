@@ -1,4 +1,4 @@
-import emailPreview from './email.preview.cmp.js';
+import emailPreview from './email-preview.cmp.js';
 
 
 

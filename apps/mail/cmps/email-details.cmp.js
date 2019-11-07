@@ -27,19 +27,12 @@ export default {
 
     methods: {
 
-        // loadEmail() {
-        //     const emailIdx = this.$route.params.id;
-        //     this.emailId = emailIdx;
-
-        //     emailServices.getEmailById(emailIdx)
-        //         .then(currEmail => this.email = currEmail);
-
-        // }
+      
 
     },
 
     created() {
-        // this.loadEmail()
+      
 
 
     }

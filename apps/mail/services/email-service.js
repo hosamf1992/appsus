@@ -5,11 +5,12 @@ import { storageService } from '/js/services/util.service.js'
 import { makeId } from '/js/services/util.service.js'
 
 export const emailServices = {
-  getMails,
+  getEmails,
   getEmailById,
   filterEmails,
-  readMailStatus
-
+  readMailStatus,
+  sendEmail
+ 
 
 }
 
@@ -30,7 +31,6 @@ let gEmails = [
   {
     id: 'acv',
     email: 'puki@gmail.com',
-
     sentFrom: 'Puki',
     subject: 'HELLO World',
     body: "HELLO World HELLO World HELLO World HELLO World",
@@ -45,7 +45,7 @@ let gEmails = [
     sentFrom: 'Shmoki',
     subject: 'HELLO JavaScript',
     body: "HELLO JavaScript HELLO JavaScript HELLO JavaScript",
-    isRead: false,
+    isRead: true,
     sentAt: 1551133930131,
     isStarred: false,
 
@@ -53,19 +53,20 @@ let gEmails = [
 
 ];
 
-window.emails = gEmails;
 
+window.emails=gEmails;
 
-// getMails()
-function getMails() {
+function getEmails() {
 
   let emails = storageService.load(MAIL_KEY)
+
   if (!emails) {
     emails = gEmails;
     storageService.store(MAIL_KEY, emails)
   }
   gEmails = emails;
-
+  console.log(gEmails)
+  return gEmails
   return Promise.resolve(gEmails);
 }
 
@@ -82,8 +83,8 @@ function getEmailById(id) {
 function filterEmails(filter, txt) {
   console.log(filter, txt)
   let filterdItems;
-  if (txt !== '' && filter === 'Unread') {
-    filterdItems = gEmails.filter(mails => mails.isRead === false);
+  if (filter === 'Unread') {
+    filterdItems = gEmails.filter(mails => (mails.isRead === false));
     console.log(filterdItems)
 
     return filterdItems
@@ -101,9 +102,34 @@ function filterEmails(filter, txt) {
 
 function readMailStatus() {
   let status;
-  let readedMails = gEmails.filter(mail => mail.isRead === true).length;
-  status = Math.floor(100 / gEmails.length * readedMails);
+  let readedMails = gEmails.filter(mail => (mail.isRead === true));
+  console.log(readedMails)
+
+  status = Math.floor(100 / gEmails.length * readedMails.length);
+  console.log(status)
   return status
 
+
+}
+
+
+function sendEmail(mail) {
+
+  let newMail = {
+
+    id: makeId(),
+    email: mail.to,
+    sentFrom: mail.from,
+    subject: mail.subject,
+    body: mail.body,
+    isRead: false,
+    sentAt: Date.now(),
+    isStarred: false,
+
+
+  }
+
+  gEmails.unshift(newMail);
+  storageService.store(MAIL_KEY, gEmails);
 
 }

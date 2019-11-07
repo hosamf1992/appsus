@@ -1,4 +1,4 @@
-import emailPreview from './email.preview.cmp.js';
+import emailPreview from './email-preview.cmp.js';
 
 
 
@@ -20,7 +20,8 @@ export default {
         }
     },
     created() {
-        this.results = emails;
+        this.results = this.emails;
+        console.log(this.results)
        
     }
 

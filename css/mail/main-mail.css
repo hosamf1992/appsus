@@ -3,3 +3,20 @@
 .email-title{
     color:blue
 }
+
+
+.email-status{
+    border-style: solid;
+}
+
+.email-inner{
+    height:24px;
+    /* width:20%; */
+ background-color: brown;
+}
+
+.status-num{
+    display: block;
+    text-align: center;
+    height: 0;
+}
