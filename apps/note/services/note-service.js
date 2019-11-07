@@ -28,19 +28,16 @@ function addNote(note) {
   
 let newNote = {
   id: makeId(),
-      content: note.content,
+      content: note.txt,
       type:note.type,
       createdAt: Date.now(),
       img: '',
       isPinned: false,
       color: '',
 }
-// if (note.type === 'noteTodo') {
-//   newNote.content = newNote.content.split(', ')
-//   let todosNew = newNoteTodos.map(todo => ({content: todo, isCompleted: false, id: makeId()}))
-//   note.content = todosNew
-// }
-
+if(note.type === "noteTodo") {
+  newNote.content = {toDoId: makeId(), isCompleted: false, toDoContent: note.txt}
+}
 
 if(note.type === "noteImg") {
   newNote.img = newNote.content

@@ -5,7 +5,7 @@ import {noteService} from '../services/note-service.js';
 export default {
   template: `
     <section>
-        <input type="text" placeholder="What's on your mind?" v-model="val.content" />
+        <input type="text" placeholder="What's on your mind?" v-model="val.txt" />
         <select v-model="val.type">
             <option value="noteText">Text</option>
             <option value="noteImg">Image</option>
@@ -19,7 +19,7 @@ export default {
     return {
       val: {
           type: '',
-          content:''
+          txt:''
       }
     }
   },
