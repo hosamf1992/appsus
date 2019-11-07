@@ -5,7 +5,7 @@ export default {
         <section class="note">
             <img :src="value.img" />
             <button @click="removeNote(value.id)">x</button>
-        
+            
         </section>
         `,
   props: ["value"],

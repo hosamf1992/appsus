@@ -6,9 +6,9 @@
     color:red
 }
 
-.note-app-container {
-    background-color: lightseagreen;
-}
+/* .note-app-container {
+    background-color: black;
+} */
 
 
 .active {
@@ -31,6 +31,7 @@
     border: solid 1px black;
     width: fit-content;
     padding: 10px;
+    margin: 1em;
     
 }
 

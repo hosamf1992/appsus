@@ -7,6 +7,8 @@ export default {
           <h1 class="toDo" :toDoTxts="splitValue" v-for="toDoTxt in splitValue" 
           @click="isActive = !isActive" :class="{active: isActive}">{{toDoTxt}}</h1>
             <button @click="removeNote(value.id)">x</button>
+           
+         
         </section>
         `,
   props: ["value"],

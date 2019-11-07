@@ -14,7 +14,6 @@ export default {
         <nav  class="nav-container flex flex-row space-between justify-center align-center">
             <note-filter @filtered="setFilter"></note-filter> 
             <h1 class="note-title"> Miss Keep</h1>
-
         </nav>
         <note-add></note-add>
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
