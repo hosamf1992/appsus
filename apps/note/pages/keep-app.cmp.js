@@ -23,6 +23,7 @@ export default {
         return{
          notes: [],
          filterBy: null,
+         filterByType: null,
          selectedNote: null,
          note: {}
         }
@@ -39,13 +40,18 @@ export default {
         setFilter(filter) {
             this.filterBy = filter;
             },
+        // setFilterByType(filterByType) {
+        //     this.filterByType = filterByType;
+        //     console.log(this.filterByType)
+        // }
         },
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
-            let regex = new RegExp(`${this.filterBy.content}`, 'i');
+            let regexType = new RegExp(`${this.filterBy.type}`, 'i');
+            let regexContent = new RegExp(`${this.filterBy.content}`, 'i');
             return this.notes.filter(note => {
-            return regex.test(note.content)
+            return regexType.test(note.type) && regexContent.test(note.content)
             })
         }
     },

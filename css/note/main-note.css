@@ -1,7 +1,7 @@
 
-/* html {
+html {
     background-color:#202124;
-} */
+}
 
 
 .note-title{
@@ -104,4 +104,8 @@
     margin: 0 1em 0 1em;
     border: inset;
     color: #6a6c74;
+}
+
+.label {
+    color: yellow;
 }
