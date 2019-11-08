@@ -9,11 +9,10 @@ import noteUpdate from '../cmps/note-update.cmp.js'
 export default {
     name: 'note-app',
     template: `
-        
         <section class="note-app-container">
-        <nav  class="nav-container flex flex-row space-between justify-center align-center">
+        <nav  class="nav-container flex flex-row justify-center align-center">
             <note-filter @filtered="setFilter"></note-filter> 
-            <h1 class="note-title"> Miss Keep</h1>
+            <h1 class="note-title"> </h1>
         </nav>
         <note-add></note-add>
         <note-update class="modal" v-if="selectedNote" :value="note" @closeModal="closeModal"></note-update>

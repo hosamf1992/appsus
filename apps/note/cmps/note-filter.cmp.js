@@ -6,7 +6,7 @@ export default {
         <section class="note-filter-container">
             <form @submit.prevent="onFilter">
                 
-                <input type="text" placeholder="Search notes" v-model="filterBy.content" />
+                <input class="input" type="text" placeholder="Search notes" v-model="filterBy.content" />
                 
             </form>
     </section>
