@@ -30,18 +30,10 @@ export default {
             this.selectedNote = noteId;
             this.$emit('selected', noteId);
             },
-            // linkClicked(){
-            // console.log('i was clicked')
-            // this.isClicked = true;
-            // // this.selectedNote = true;
-            // }
+         
     },
     computed: {
        
-    },
-    created(){
-        // this.notes = noteService.getNotes() 
-        // console.log(this.notes)
     },
     components: {
         

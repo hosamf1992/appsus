@@ -10,9 +10,9 @@ export default {
     name: 'note-app',
     template: `
         <section class="note-app-container">
-        <nav  class="nav-container flex flex-row justify-center align-center">
+        <nav  class="nav-container flex align-center justify-center">
             <note-filter @filtered="setFilter"></note-filter> 
-            <h1 class="note-title"> </h1>
+
         </nav>
         <note-add></note-add>
         <note-update class="modal" v-if="selectedNote" :value="note" @closeModal="closeModal"></note-update>
