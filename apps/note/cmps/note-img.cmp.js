@@ -6,22 +6,22 @@ export default {
           <div>
             <img :src="value.img" />
             {{value.content}}
-            <button @click="removeNote(value.id)">
+            <!-- <button @click="removeNote(value.id)">
               <img src="img/note/trash-small.png"></button>
             <button @click="pinNote(value, value.id)">
-            <img class="pin-on-note" src="img/note/pin-red.jpg"></button>
+            <img class="pin-on-note" src="img/note/pin-red.jpg"></button> -->
           </div>
         </section>
         `,
   props: ["value"],
   
   methods: {
-        removeNote(noteId) {
-            noteService.removeNote(noteId)
-        },
-        pinNote(note, noteId) {
-          noteService.pinNote(note, noteId)
-      }
+      //   removeNote(noteId) {
+      //       noteService.removeNote(noteId)
+      //   },
+      //   pinNote(note, noteId) {
+      //     noteService.pinNote(note, noteId)
+      // }
     },
   computed: {
     
