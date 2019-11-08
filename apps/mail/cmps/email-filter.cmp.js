@@ -1,12 +1,11 @@
-import emailPreview from './email-preview.cmp.js';
 
 
 
 export default {
 
     template: `
-    <section class="email-filter">
-    <h2> FilterBy</h2>
+    <section class="email-filter text-center">
+   
     <input type="text" placeholder="Search Email" v-model="filterBy.name" />
     <select  v-model="filterBy.isRead">
      <option selected  value="All">All</option>

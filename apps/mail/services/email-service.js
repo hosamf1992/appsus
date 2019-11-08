@@ -8,7 +8,7 @@ import { makeId } from '../../../js/services/util.service.js'
 export const emailServices = {
   getEmails,
   getEmailById,
-  filterEmails,
+  
   readMailStatus,
   sendEmail,
   removeEmail,
@@ -26,7 +26,7 @@ let gEmails = [
   {
     id: 'abc',
     email: 'nana@gmail.com',
-    sentFrom: 'Nana',
+    sentFrom: 'Walla',
     subject: 'HELLO DUDE-HELLO DUDE',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
     ,
@@ -40,7 +40,7 @@ let gEmails = [
   {
     id: 'acv',
     email: 'puki@gmail.com',
-    sentFrom: 'Puki',
+    sentFrom: 'Nana',
     subject: 'HELLO JavaScript-HELLO JavaScript',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
 
@@ -51,6 +51,73 @@ let gEmails = [
 
   },
   {
+    id: 'alf',
+    email: 'shmoki@gmail.com',
+    sentFrom: 'Puki',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt:Date.now()
+
+
+  },
+  {
+    id: 'alf',
+    email: 'shmoki@gmail.com',
+    sentFrom: 'Hosam',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt:Date.now()
+
+
+  },
+  {
+    id: 'alf',
+    email: 'shmoki@gmail.com',
+    sentFrom: 'Golda',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt:Date.now()
+
+
+  },{
+    id: 'alf',
+    email: 'shmoki@gmail.com',
+    sentFrom: 'Rita',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt:Date.now()
+
+
+  },{
+    id: 'alf',
+    email: 'shmoki@gmail.com',
+    sentFrom: 'Shmoki',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt:Date.now()
+
+
+  },{
     id: 'alf',
     email: 'shmoki@gmail.com',
     sentFrom: 'Shmoki',
@@ -94,25 +161,7 @@ function getEmailById(id) {
 }
 
 
-function filterEmails(filter, txt) {
-  console.log(filter, txt)
-  let filterdItems;
-  if (filter === 'Unread') {
-    filterdItems = gEmails.filter(mails => (mails.isRead === false));
-    console.log(filterdItems)
 
-    return filterdItems
-  }
-
-  if (txt !== '' && filter === 'Read') {
-    filterdItems = gEmails.filter(mails => (mails.isRead === true && mails.subject === txt));
-    console.log(filterdItems)
-
-    return filterdItems
-  }
-
-
-}
 
 function readMailStatus() {
   let status;

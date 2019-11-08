@@ -11,7 +11,7 @@ export default {
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
                 <img :src="value.img" />
-                <button @click="removeNote(value.id), closeModal" >
+                <button @click="removeNote(value.id)" >
                     <img src="img/note/trash.png"></button>
                 <button @click="pinNote(value, value.id)">
                     <img src="img/note/pin-keep.png"></button>
@@ -31,6 +31,7 @@ export default {
         removeNote(noteId) {
           noteService.removeNote(noteId);
           this.isShown = false;
+          this.closeModal()
           },
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
@@ -39,6 +40,7 @@ export default {
             noteService.updateNote(noteId, noteNewContent)
         },
         closeModal() {
+            console.log('close')
             this.isShown = false
             this.$emit('closeModal', false);
         }

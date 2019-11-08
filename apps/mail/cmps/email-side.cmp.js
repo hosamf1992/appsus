@@ -8,11 +8,16 @@ import emailLinks from '../cmps/links-side.cmp.js';
 export default {
     template: `
             <section class="mail-side">
+           
+           
+            <div class="flex justify-center">
             <router-link  :to="composeEmail"><button class="compose-btn" >+ Compose</button></router-link>
+            </div>
+          
+          
             <email-links></email-links>
-            <h2>status</h2>
+        
             <email-status> </email-status>
-
 
             </section>
     `,

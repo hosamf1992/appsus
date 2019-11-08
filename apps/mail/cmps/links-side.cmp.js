@@ -7,11 +7,24 @@ export default {
 
 
     template: `
-<section >
-  
-     <router-link :to="inboxLink"> <h2  @click="reportFilter" >{{unreadCount}} Inbox</h2> </router-link>  
+<section class="flex justify-center align-center flex-col" >
+    <div>
+        <router-link class="flex align-center" :to="inboxLink">
+        <i class="fas fa-inbox"></i>
+          <h3  @click="reportFilter" >  Inbox</h3>
+         </router-link>  
+      </div>
     
-    <div @click="filterStared"> <h2> <span>☆</span> Starred </h2>  </div>
+    <div class="flex align-center">
+    <i class="fas fa-star"></i>
+     <h3 class="cursor"  @click="filterStared">Starred </h3>
+    
+      </div>
+    <div class="flex align-center">
+         <i class="fas fa-mail-bulk"></i> 
+         <h3>  Sent Mail</h3>
+    </div>
+  
    
           </section>
                
@@ -37,8 +50,8 @@ export default {
 
     },
     created() {
-         emailServices.countUnread()
-        .then(res =>this.count=res)
+        emailServices.countUnread()
+            .then(res => this.count = res)
     }
 
     , computed: {
@@ -48,9 +61,9 @@ export default {
         },
         unreadCount() {
 
-             emailServices.countUnread()
-                .then(res =>this.count=res);
-                return this.count
+            emailServices.countUnread()
+                .then(res => this.count = res);
+            return this.count
         }
 
 
