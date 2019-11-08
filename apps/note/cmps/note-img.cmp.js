@@ -6,7 +6,7 @@ export default {
           <div>
             <img :src="value.img" />
             {{value.content}}
-            <button v-if="value.isPinned"><img src="img/note/pin-red.jpg"></button> 
+            <button v-if="value.isPinned"><img src="img/note/pin1.png"></button> 
           </div>
         </section>
         `,

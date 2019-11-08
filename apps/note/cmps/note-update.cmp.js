@@ -15,7 +15,7 @@ export default {
                     <img src="img/note/trash.png"></button>
                 <button @click="pinNote(value, value.id)">
                     <img v-if="!value.isPinned" src="img/note/pin-keep.png">
-                    <img v-if="value.isPinned" src="img/note/pin-red.jpg">
+                    <img v-if="value.isPinned" src="img/note/pin1.png">
                 </button>
         </section>
     `,
@@ -34,7 +34,6 @@ export default {
           },
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
-          console.log(this.value.isPinned)
           },
         updateNote(noteId, noteNewContent) {
             noteService.updateNote(noteId, noteNewContent)

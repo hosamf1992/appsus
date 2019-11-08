@@ -11,7 +11,7 @@ export default {
             <option value="noteImg">Image</option>
             <option value="noteTodo">To do</option>
           </select>
-          <button @click="addNote"> <img src="img/note/add.png"></button>
+          <button @click="addNote"> <img src="img/note/add-icon.jpg"></button>
 </section>
         `,
 
