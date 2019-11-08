@@ -14,7 +14,7 @@ html {
 }
 
 
-.active {
+.notActive {
     text-decoration-line: line-through;
 }
 

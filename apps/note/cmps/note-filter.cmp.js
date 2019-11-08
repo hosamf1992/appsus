@@ -4,10 +4,12 @@ export default {
     name: 'note-filter',
     template: `
         <section class="filter-note-container flex align-center justify-center">
+
             <label class="label">Filter by note type: </label>
             <select class="select" v-model="filterBy.type" @mouseup="onFilterBy">
                 <option v-for="type in noteTypes">{{type}}</option>
             </select>
+            
             <form @submit.prevent="onFilterBy">          
                 <input class="input" type="text" placeholder="Search notes" 
                 v-model="filterBy.content" />   
@@ -31,12 +33,9 @@ export default {
     
     methods: {
         onFilterBy() {
-            // console.log('Filter Created', this.filterBy);
+
             this.$emit('filtered', this.filterBy)
         },
-        // onFilterByType() {
-        //     console.log(this.filterBy)
-        //     this.$emit('filteredByType', this.filterBy)
-        // }
+        
     }
 }

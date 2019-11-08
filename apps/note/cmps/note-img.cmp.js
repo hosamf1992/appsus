@@ -2,7 +2,7 @@ import { noteService } from "../services/note-service.js"
 
 export default {
   template: `
-        <section class="note">
+        <section class="note" :style="{ backgroundColor: value.bgc}">>
           <div>
             <img :src="value.img" />
             {{value.content}}

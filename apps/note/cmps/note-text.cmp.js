@@ -2,7 +2,8 @@ import { noteService } from "../services/note-service.js"
 
 export default {
   template: `
-        <section class="note">
+        <section class="note" 
+                :style="{ backgroundColor: value.bgc}">
            <h1 class="note-text">
                 {{value.content}}
             </h1>
@@ -12,7 +13,7 @@ export default {
   props: ["value"],
   data () { 
     return {
-      
+
     }
 
   },

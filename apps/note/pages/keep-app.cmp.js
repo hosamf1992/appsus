@@ -40,10 +40,6 @@ export default {
         setFilter(filter) {
             this.filterBy = filter;
             },
-        // setFilterByType(filterByType) {
-        //     this.filterByType = filterByType;
-        //     console.log(this.filterByType)
-        // }
         },
     computed: {
         notesToShow() {

@@ -7,7 +7,8 @@ import {makeId} from '../../../js/services/util.service.js'
 export const noteService = {
     getNotes,
     getNoteById,
-    updateNote,
+    updateNoteContent,
+    updateNoteBGC,
     removeNote,
     findNote,
     pinNote,
@@ -34,10 +35,12 @@ let newNote = {
   id: makeId(),
   content: note.txt,
   type: note.type,
+  toDoIsActive: true,
   createdAt: Date.now(),
   img: '',
   isPinned: false,
-  color: '',
+  bgc: '',
+  
 }
 
 if(note.type === "noteImg") {
@@ -76,9 +79,15 @@ function findNote(noteId) {
     return note
 }
 
-function updateNote(noteId, noteNewContent) {
+function updateNoteContent(noteId, noteNewContent) {
     var idx = gNotes.findIndex(note => note.id === noteId);
     if (idx !== -1) gNotes[idx].content = noteNewContent;
+    storageService.store(NOTES_KEY, gNotes)
+}
+
+function updateNoteBGC(noteId, bgc) {
+  var idx = gNotes.findIndex(note => note.id === noteId);
+    if (idx !== -1) gNotes[idx].bgc = bgc;
     storageService.store(NOTES_KEY, gNotes)
 }
 
@@ -87,76 +96,79 @@ let gNotes = [
       id: makeId(),
       content: "Buy milk",
       type:'noteImg',
+      toDoIsActive: true,
       createdAt: new Date().getHours(),
       img: '../img/note/milk.jpg',
       isPinned: false,
-      color: 'blue'
+      bgc: null
     },
     {
         id: makeId(),
         content: "Visit barber, collect shirt, take car to repair",
         type: 'noteTodo',
+        toDoIsActive: true,
         createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
-        color: 'red'
+        bgc: null
       },
       {
         id: makeId(),
         content: "Do some sport",
         type: 'noteText',
+        toDoIsActive: true,
         createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
-        color: 'orange'
+        bgc: null
       },
       {
         id: makeId(),
         content: "I love web",
         type: 'noteText',
+        toDoIsActive: true,
         createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
-        color: 'blue'
+        bgc: null
       },
       {
         id: makeId(),
         content: "Real programmers count from 0",
         type:'noteText',
+        toDoIsActive: true,
         createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
-        color: 'white'
+        bgc: null
       },
       {
           id: makeId(),
           content: "Study Vue, prepare presentation, cooking course",
           type: 'noteTodo',
+          toDoIsActive: true,
           createdAt: new Date().getHours(),
           img: '',
           isPinned: false,
-          color: 'red'
+          bgc: null
         },
         {
           id: makeId(),
           content: "Visit Saturn",
           type: 'noteImg',
+          toDoIsActive: true,
           createdAt: new Date().getHours(),
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWkepP2_T3zgNJeYP0P5x5zJjSX_WRqtT9bnEvdRqMmgCAh7kE',
           isPinned: false,
-          color: 'orange'
+          bgc: null
         },{
           id: makeId(),
           content: "Loop for for",
           type: 'noteText',
+          toDoIsActive: true,
           createdAt: new Date().getHours(),
           img: '',
           isPinned: false,
-          color: 'gray'
+          bgc: null
         },
-  
-
-
-
-
     ]
