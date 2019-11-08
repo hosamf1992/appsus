@@ -20,10 +20,7 @@ export default {
     props: ["value"],
 
     data() { return {
-        // isShown: true,
-        txt: this.value.content,
-        
-        
+        txt: this.value.content,  
     }
 
     },
@@ -31,6 +28,7 @@ export default {
         removeNote(noteId) {
           noteService.removeNote(noteId);
           this.isShown = false;
+          this.closeModal();
           },
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
@@ -42,6 +40,5 @@ export default {
             this.isShown = false
             this.$emit('closeModal', false);
         }
-        },
-        
+        },  
     }
