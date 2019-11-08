@@ -11,7 +11,7 @@ export default {
     <section class="email-list-container">
 
 
-    <email-filter  @filtered="setFilter"></email-filter>
+    <email-filter   @filtered="setFilter"></email-filter>
         <ul class="mails-list " >
 
            <email-preview :filterd="filterBy"  v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 

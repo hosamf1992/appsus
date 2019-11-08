@@ -6,13 +6,13 @@ export default {
         <section  >
     <h2> Sent From: {{email.sentFrom}} </h2>
     <h2> Email: {{email.email}}  </h2>
-    <h2> Subject: <span v-if="replyClicked">Re:</span> {{email.email}}  </h2>
+    <h2> Subject: <span v-if="replyClicked">Re:</span> {{email.subject}}  </h2>
     <p v-if="show"> Body: {{email.body}}  </p>
     <textarea v-model="replyTxt" class="reply-area" v-if="isEdit"> {{email.body}}  </textarea>
     <div>
-    <router-link :to="backToList"> <button >Back</button> </router-link>
-      <button v-if="!replyClicked" @click="reply" >Replay</button>
-      <button v-if="replyClicked" @click="sendreply" >Send</button>
+    <router-link :to="backToList"> <button class="mails-btn" >Back</button> </router-link>
+      <button class="mails-btn" v-if="!replyClicked" @click="reply" >Replay</button>
+      <button class="mails-btn" v-if="replyClicked" @click="sendreply" >Send</button>
     </div>
         </section>
     `,
