@@ -12,9 +12,12 @@ export default {
                 <p>Written At hour: {{ value.createdAt }}</p>
                 <img :src="value.img" />
                 <button @click="removeNote(value.id), closeModal" >
-                    <img src="img/note/trash.png"></button>
+                    <img src="img/note/trash.png">
+                </button>
                 <button @click="pinNote(value, value.id)">
-                    <img src="img/note/pin-keep.png"></button>
+                    <img v-if="!value.isPinned" src="img/note/pin-keep.png">
+                    <img v-if="value.isPinned" src="img/note/pin-red.jpg">
+                </button>
         </section>
     `,
     props: ["value"],
@@ -32,6 +35,7 @@ export default {
           },
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
+          console.log(this.value.isPinned)
           },
         updateNote(noteId, noteNewContent) {
             noteService.updateNote(noteId, noteNewContent)

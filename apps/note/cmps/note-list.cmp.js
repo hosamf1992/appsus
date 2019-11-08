@@ -13,6 +13,7 @@ export default {
             <div v-for="(note, idx) in notes">
                     <component :is="note.type"  :value="note" 
                     @click.native="onSelectNote(note.id)" >
+                    
                 </component>
             </div>
             
