@@ -66,3 +66,16 @@ cursor: pointer
  flex-wrap: wrap;
 
 }
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+.reply-area{
+    resize: none;
+    height: 100%;
+    width: 90%;
+}

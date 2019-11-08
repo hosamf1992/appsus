@@ -9,7 +9,7 @@ export default {
     template: `
 <section >
   
-     <router-link :to="inboxLink"> <h2  @click="reportFilter" > Inbox</h2> </router-link>  
+     <router-link :to="inboxLink"> <h2  @click="reportFilter" >{{unreadCount}} Inbox</h2> </router-link>  
     
     <div @click="filterStared"> <h2> <span>☆</span> Starred </h2>  </div>
    
@@ -19,8 +19,8 @@ export default {
 
     data() {
         return {
-           
 
+            count: 0,
         }
     },
     methods: {
@@ -30,22 +30,27 @@ export default {
 
 
         },
-        reportFilter(){
+        reportFilter() {
             eventBus.$emit('inbox-filter', 'filter');
         }
 
 
     },
     created() {
-
+         emailServices.countUnread()
+        .then(res =>this.count=res)
     }
 
     , computed: {
         inboxLink() {
-           
             return `/email/list`
 
+        },
+        unreadCount() {
 
+             emailServices.countUnread()
+                .then(res =>this.count=res);
+                return this.count
         }
 
 

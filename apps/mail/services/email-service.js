@@ -13,7 +13,9 @@ export const emailServices = {
   sendEmail,
   removeEmail,
   markRead,
-  markStar
+  markStar,
+  countUnread,
+  sendReply
 
 
 }
@@ -25,36 +27,41 @@ let gEmails = [
     id: 'abc',
     email: 'nana@gmail.com',
     sentFrom: 'Nana',
-    subject: 'HELLO DUDE',
+    subject: 'HELLO DUDE-HELLO DUDE',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
     ,
     isRead: false,
-    sentAt: getTime(),
+    time: getTime(),
     isStarred: false,
+    sentAt:1573203
+
 
   },
   {
     id: 'acv',
     email: 'puki@gmail.com',
     sentFrom: 'Puki',
-    subject: 'test',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
 
     isRead: false,
-    sentAt: getTime(),
+    time: getTime(),
     isStarred: true,
+    sentAt:Date.now()
 
   },
   {
     id: 'alf',
     email: 'shmoki@gmail.com',
     sentFrom: 'Shmoki',
-    subject: 'HELLO JavaScript',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
     ,
     isRead: false,
-    sentAt: getTime(),
+    time: getTime(),
     isStarred: false,
+    sentAt:Date.now()
+
 
   }
 
@@ -131,8 +138,10 @@ function sendEmail(mail) {
     subject: mail.subject,
     body: mail.body,
     isRead: false,
-    sentAt: getTime(),
+    time: getTime(),
     isStarred: false,
+    sentAt:Date.now()
+
 
 
   }
@@ -187,3 +196,19 @@ function markStar(id) {
 
 }
 
+function countUnread() {
+  let count=0;
+  gEmails.forEach(email => count+= email.isRead === false);
+  return Promise.resolve(count);
+
+}
+
+function sendReply(id,txt){
+  let emailIdx = gEmails.findIndex(email => email.id === id);
+  console.log(emailIdx)
+  gEmails[emailIdx].body=txt;
+  storageService.store(MAIL_KEY, gEmails);
+  return Promise.resolve();
+
+
+}

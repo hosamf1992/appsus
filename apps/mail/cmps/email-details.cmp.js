@@ -9,18 +9,18 @@ export default {
             <h2>from: {{opendemail.sentFrom}}</h2>
          
             <p>Email: {{opendemail.email}}</p>
-            <p> {{opendemail.body}}</p>
+            <p> {{subString}}</p>
            
             <button @click.stop="deleteEmail(opendemail.id)">delete</button>
-          <button @click.stop="markEmail(opendemail.id)">Mark Unread</button>
-            <router-link :to="expandEmail"> <button >Expand</button> </router-link>
-
-
+    
+            <router-link :to="expandEmail"> <button >Read More</button> </router-link>
+    
             <router-view></router-view>
 
           
         </div>
     `,
+    // <button @click.stop="markEmail(opendemail.id)">Mark Unread</button>
 
     data() {
         return {
@@ -34,12 +34,25 @@ export default {
         expandEmail() {
             console.log(this.opendemail.id)
 
-         
+
 
             return `details/${this.opendemail.id}`
 
 
-        }
+        },
+        subString() {
+
+            let str = this.opendemail.body;
+            if (str.length > 100) {
+
+                return str.substring(0, 100) + " ....";
+               
+              }
+               return str;
+
+
+
+        },
     },
 
     methods: {
@@ -49,18 +62,14 @@ export default {
             eventBus.$emit('change-status', 'status');
         },
 
-        markEmail(id) {
-            emailServices.markRead(id, 'unread').then
-            (eventBus.$emit('change-status', 'status'),
+        // markEmail(id) {
+        //     emailServices.markRead(id, 'unread').then
+        //         (eventBus.$emit('change-status', 'status'),
+
+        //         )
+            // this.$emit('close', false)
+
         
-            )
-            this.$emit('close', false)
-
-        },
-
-
-
-
 
     },
 
