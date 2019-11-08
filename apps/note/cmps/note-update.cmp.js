@@ -36,11 +36,7 @@ export default {
         removeNote(noteId) {
           noteService.removeNote(noteId);
           this.isShown = false;
-<<<<<<< HEAD
           this.closeModal()
-=======
-          this.closeModal();
->>>>>>> 5dfbada5421c848f7409027141bba1b191efb311
           },
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
