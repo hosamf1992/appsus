@@ -31,7 +31,6 @@ export default {
     methods: {
         selectNote(noteId) {
         this.selectedNote = true;
-            console.log(this.selectedNote)
         let noteInModal = noteService.findNote(noteId);
         this.note = noteInModal;
             },

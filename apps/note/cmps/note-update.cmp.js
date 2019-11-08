@@ -4,7 +4,7 @@ import { noteService } from "../services/note-service.js"
 export default {
     name: 'note-update',
     template: `
-        <section class="note-update-container">
+        <section  class="note-update-container">
                 <button class="close-modal-btn" @click="closeModal">x</button>
                 <input type="text" placeholder="txt" v-model="txt"
                          @keyup="updateNote(value.id, txt)"></input>
@@ -18,7 +18,7 @@ export default {
     props: ["value"],
 
     data() { return {
-        
+        // isShown: true,
         txt: this.value.content,
         
         
