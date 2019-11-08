@@ -6,7 +6,7 @@ export default {
            <h1 class="note-text">
                 {{value.content}}
             </h1>
-            <button v-if="value.isPinned"><img src="img/note/pin-red.jpg"></button> 
+            <button v-if="value.isPinned"><img src="img/note/pin1.png"></button> 
         </section>
         `,
   props: ["value"],
