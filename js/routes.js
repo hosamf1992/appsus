@@ -1,5 +1,5 @@
 
-import noteApp from '../apps/note/pages/note-app.cmp.js';
+import keepApp from '../apps/note/pages/keep-app.cmp.js';
 import mailApp from '../apps/mail/pages/email-app.cmp.js';
 import emailFullDetails from '../apps/mail/cmps/email-full-deatils.cmp.js';
 import composeEmail from '../apps/mail/cmps/email-compose.cmp.js'
@@ -31,8 +31,8 @@ const myRoutes = [
         ]
     },
     {
-        path: '/note',
-        component: noteApp
+        path: '/keep',
+        component: keepApp
     },
    
     

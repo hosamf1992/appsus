@@ -16,7 +16,7 @@ export default {
             <h1 class="note-title"> Miss Keep</h1>
         </nav>
         <note-add></note-add>
-        <note-update class="modal" v-if="selectedNote" :value="note"></note-update>
+        <note-update class="modal" v-if="selectedNote" :value="note" @closeModal="closeModal"></note-update>
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
         </section>
     `,
@@ -31,10 +31,13 @@ export default {
     methods: {
         selectNote(noteId) {
         this.selectedNote = true;
-        let selectedNote = noteService.findNote(noteId);
-        this.note = selectedNote;
-        
+            console.log(this.selectedNote)
+        let noteInModal = noteService.findNote(noteId);
+        this.note = noteInModal;
             },
+        closeModal (){
+        this.selectedNote = false;
+        },
         setFilter(filter) {
             this.filterBy = filter;
             },

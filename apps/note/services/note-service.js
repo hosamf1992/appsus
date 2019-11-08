@@ -1,7 +1,7 @@
 'use strict'
 
 import {storageService} from '../../../js/services/util.service.js'
-// import {makeId} from '/js/services/util.service.js'
+
 import {makeId} from '../../../js/services/util.service.js'
 
 export const noteService = {
@@ -57,9 +57,17 @@ function removeNote(noteId) {
 
 function pinNote(note, noteId){
 let idx = gNotes.findIndex(noteTodo => noteTodo.id === noteId);
-gNotes[idx].isPinned = true;
+gNotes[idx].isPinned = !gNotes[idx].isPinned;
+console.log(gNotes[idx].isPinned)
+
+if (gNotes[idx].isPinned === true) {
 gNotes.splice(idx,1)
 gNotes.unshift(0, 1, note)
+} else {
+  console.log('not pinned')
+  let firstUnpinned = gNotes.findIndex(note => note.isPinned === false);
+  console.log(firstUnpinned);
+}
 storageService.store(NOTES_KEY, gNotes)
 }
 
@@ -102,5 +110,54 @@ let gNotes = [
         img: '',
         isPinned: false,
         color: 'orange'
-      }
+      },
+      {
+        id: makeId(),
+        content: "I love web",
+        type: 'noteText',
+        createdAt: new Date().getHours(),
+        img: '',
+        isPinned: false,
+        color: 'blue'
+      },
+      {
+        id: makeId(),
+        content: "Real programmers count from 0",
+        type:'noteText',
+        createdAt: new Date().getHours(),
+        img: '',
+        isPinned: false,
+        color: 'white'
+      },
+      {
+          id: makeId(),
+          content: "Study Vue, prepare presentation, cooking course",
+          type: 'noteTodo',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          color: 'red'
+        },
+        {
+          id: makeId(),
+          content: "Visit Saturn",
+          type: 'noteImg',
+          createdAt: new Date().getHours(),
+          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWkepP2_T3zgNJeYP0P5x5zJjSX_WRqtT9bnEvdRqMmgCAh7kE',
+          isPinned: false,
+          color: 'orange'
+        },{
+          id: makeId(),
+          content: "Loop for for",
+          type: 'noteText',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          color: 'gray'
+        },
+  
+
+
+
+
     ]

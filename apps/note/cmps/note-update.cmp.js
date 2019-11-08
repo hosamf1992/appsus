@@ -4,20 +4,21 @@ import { noteService } from "../services/note-service.js"
 export default {
     name: 'note-update',
     template: `
-        <section v-if="isShown" class="note-update-container">
+        <section class="note-update-container">
+                <button class="close-modal-btn" @click="closeModal">x</button>
                 <input type="text" placeholder="txt" v-model="txt"
                          @keyup="updateNote(value.id, txt)"></input>
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
                 <img :src="value.img" />
-                <button @click="removeNote(value.id)">x</button>
-                <button @click="pinNote(value, value.id)">Pinned</button>
+                <button @click="removeNote(value.id)"><img src="img/note/trash.png"></button>
+                <button @click="pinNote(value, value.id)"><img src="img/note/pin-keep.png"></button>
         </section>
     `,
     props: ["value"],
 
     data() { return {
-        isShown: true,
+        
         txt: this.value.content,
         
         
@@ -34,6 +35,10 @@ export default {
           },
         updateNote(noteId, noteNewContent) {
             noteService.updateNote(noteId, noteNewContent)
+        },
+        closeModal() {
+            this.isShown = false
+            this.$emit('closeModal', false);
         }
         },
         

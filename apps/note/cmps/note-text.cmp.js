@@ -6,18 +6,26 @@ export default {
            <h1 class="note-text">
                 {{value.content}}
             </h1>
-            <button @click="removeNote(value.id)" >x</button>
-            <button @click="pinNote(value, value.id)">Pinned</button>
+            <button @click="removeNote(value.id)">
+              <img src="img/note/trash-small.png"></button>
+            <button @click="pinNote(value, value.id)">
+            <img class="pin-on-note" src="img/note/pin-red.jpg"></button>
         </section>
         `,
   props: ["value"],
-  
+  data () { 
+    return {
+      
+    }
+
+  },
   methods: {
       removeNote(noteId) {
             noteService.removeNote(noteId)
         },
       pinNote(note, noteId) {
-            noteService.pinNote(note, noteId)
+        
+        noteService.pinNote(note, noteId)
         }
     },
   computed: {

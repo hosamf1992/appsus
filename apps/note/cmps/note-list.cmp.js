@@ -9,9 +9,11 @@ import noteImg from './note-img.cmp.js'
 export default {
     props: ['notes'],
     template: `
-        <section class="note-list-container">
+        <section class="note-list-container flex wrap flex-row">
             <div v-for="(note, idx) in notes">
-                    <component :is="note.type"  :value="note" @click.native="onSelectNote(note.id)" ></component>
+                    <component :is="note.type"  :value="note" 
+                    @click.native="onSelectNote(note.id)" >
+                </component>
             </div>
             
         </section>
@@ -25,7 +27,7 @@ export default {
     methods: {  
         onSelectNote(noteId) {
             this.selectedNote = noteId;
-            this.$emit('selected', this.selectedNote);
+            this.$emit('selected', noteId);
             },
             // linkClicked(){
             // console.log('i was clicked')
