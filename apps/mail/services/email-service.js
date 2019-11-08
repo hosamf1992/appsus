@@ -24,7 +24,7 @@ const MAIL_KEY = 'mailApp';
 
 let gEmails = [
   {
-    id: 'abc',
+    id: makeId(),
     email: 'nana@gmail.com',
     sentFrom: 'Walla',
     subject: 'HELLO DUDE-HELLO DUDE',
@@ -38,7 +38,7 @@ let gEmails = [
 
   },
   {
-    id: 'acv',
+    id: makeId(),
     email: 'puki@gmail.com',
     sentFrom: 'Nana',
     subject: 'HELLO JavaScript-HELLO JavaScript',
@@ -51,7 +51,7 @@ let gEmails = [
 
   },
   {
-    id: 'alf',
+    id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Puki',
     subject: 'HELLO JavaScript-HELLO JavaScript',
@@ -65,7 +65,7 @@ let gEmails = [
 
   },
   {
-    id: 'alf',
+    id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Hosam',
     subject: 'HELLO JavaScript-HELLO JavaScript',
@@ -79,7 +79,7 @@ let gEmails = [
 
   },
   {
-    id: 'alf',
+    id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Golda',
     subject: 'HELLO JavaScript-HELLO JavaScript',
@@ -92,7 +92,7 @@ let gEmails = [
 
 
   },{
-    id: 'alf',
+    id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Rita',
     subject: 'HELLO JavaScript-HELLO JavaScript',
@@ -105,7 +105,7 @@ let gEmails = [
 
 
   },{
-    id: 'alf',
+    id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Shmoki',
     subject: 'HELLO JavaScript-HELLO JavaScript',
@@ -118,7 +118,7 @@ let gEmails = [
 
 
   },{
-    id: 'alf',
+    id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Shmoki',
     subject: 'HELLO JavaScript-HELLO JavaScript',
