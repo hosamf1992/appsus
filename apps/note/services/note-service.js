@@ -1,7 +1,7 @@
 'use strict'
 
 import {storageService} from '../../../js/services/util.service.js'
-// import {makeId} from '/js/services/util.service.js'
+
 import {makeId} from '../../../js/services/util.service.js'
 
 export const noteService = {
@@ -57,9 +57,17 @@ function removeNote(noteId) {
 
 function pinNote(note, noteId){
 let idx = gNotes.findIndex(noteTodo => noteTodo.id === noteId);
-gNotes[idx].isPinned = true;
+gNotes[idx].isPinned = !gNotes[idx].isPinned;
+console.log(gNotes[idx].isPinned)
+
+if (gNotes[idx].isPinned === true) {
 gNotes.splice(idx,1)
 gNotes.unshift(0, 1, note)
+} else {
+  console.log('not pinned')
+  let firstUnpinned = gNotes.findIndex(note => note.isPinned === false);
+  console.log(firstUnpinned);
+}
 storageService.store(NOTES_KEY, gNotes)
 }
 
