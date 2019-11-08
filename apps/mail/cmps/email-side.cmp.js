@@ -6,13 +6,13 @@ import { emailServices } from '../services/email-service.js'
 // import composeEmail from '../cmps/email-compose.cmp.js';
 
 
-{/* <email-status :status="emailStatus"> </email-status> */ }
 
 export default {
     template: `
             <section class="mail-side">
             <router-link  :to="composeEmail"><button class="compose-btn" >+ Compose</button></router-link>
             <email-links></email-links>
+            <h2>status</h2>
             <email-status> </email-status>
 
 

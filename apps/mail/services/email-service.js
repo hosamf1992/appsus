@@ -1,8 +1,9 @@
 'use strict'
 
 
-import { storageService } from '/js/services/util.service.js'
-import { makeId } from '/js/services/util.service.js'
+import { storageService } from '../../../js/services/util.service.js'
+import { makeId } from '../../../js/services/util.service.js'
+
 
 export const emailServices = {
   getEmails,
@@ -36,12 +37,12 @@ let gEmails = [
     id: 'acv',
     email: 'puki@gmail.com',
     sentFrom: 'Puki',
-    subject: 'HELLO World',
+    subject: 'test',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
 
     isRead: false,
     sentAt: getTime(),
-    isStarred: false,
+    isStarred: true,
 
   },
   {
@@ -72,8 +73,8 @@ function getEmails() {
   }
   gEmails = emails;
   console.log(gEmails)
-  return gEmails
   return Promise.resolve(gEmails);
+  return gEmails
 }
 
 function getEmailById(id) {
@@ -113,8 +114,8 @@ function readMailStatus() {
   console.log(readedMails)
 
   status = Math.floor(100 / gEmails.length * readedMails.length);
-  console.log(status)
-  return status
+  return Promise.resolve(status);
+
 
 
 }
@@ -153,10 +154,12 @@ function removeEmail(id) {
 
 }
 
-function markRead(id) {
+function markRead(id, status) {
+  if (status === 'read') status = true;
+  if (status === 'unread') status = false;
+  console.log(status)
   let emailIdx = gEmails.findIndex(email => email.id === id);
-  let toggleMark = gEmails[emailIdx].isRead;
-  gEmails[emailIdx].isRead = !toggleMark;
+  gEmails[emailIdx].isRead = status;
   storageService.store(MAIL_KEY, gEmails);
   return Promise.resolve();
 
@@ -175,7 +178,7 @@ function getTime() {
 
 }
 
-function markStar(id){
+function markStar(id) {
   let emailIdx = gEmails.findIndex(email => email.id === id);
   let toggleStar = gEmails[emailIdx].isStarred;
   gEmails[emailIdx].isStarred = !toggleStar;

@@ -1,6 +1,7 @@
 import emailPreview from './email-preview.cmp.js';
 import { emailServices } from '../services/email-service.js'
 import emailFilter from '../cmps/email-filter.cmp.js';
+import { eventBus } from '../../../js/services/event-bus.service.js'
 
 
 
@@ -38,17 +39,39 @@ export default {
             console.log('Parent got filter:', filterBy);
             this.filterBy = filterBy
 
-           
+
         },
     },
     created() {
-       
-        this.results = emailServices.getEmails();
-        console.log(this.results)
+
+        emailServices.getEmails().then(res => this.results = res);
+        console.log(this.results);
+
+
+
+        eventBus.$on('filter-me', (msg) => {
+
+            this.results = this.results.filter(mails => (mails.isStarred === true))
+
+        });
+
+        eventBus.$on('inbox-filter', (msg) => {
+
+
+            emailServices.getEmails().then(res => this.results = res);
+            // this.results = this.results.filter(mails => (mails.isStarred === true))
+
+        })
+
+
+
 
     }
 
     , computed: {
+
+
+
 
         emailToShow() {
 
@@ -56,20 +79,23 @@ export default {
             temp = this.results;
             if (!this.filterBy) return this.results;
 
-            var regex = new RegExp(`${this.filterBy.name}`, 'i');
+            let regex = new RegExp(`${this.filterBy.name}`, 'i');
 
             if (this.filterBy.isRead === 'Read') {
-                return temp.filter(mails => (mails.isRead === true));
+                return temp.filter(mails => (mails.isRead === true && regex.test(mails.subject)));
 
             }
             if (this.filterBy.isRead === 'Unread') {
-                return temp = this.results.filter(mails => (mails.isRead === false));
+                return temp = this.results.filter(mails => (mails.isRead === false  && regex.test(mails.subject)));
             }
 
             if (this.filterBy.isRead === 'All') {
                 return temp
             }
-        }
+
+        },
+
+
 
     },
     components: {

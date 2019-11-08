@@ -5,13 +5,14 @@ export default {
     props: ['opendemail'],
     template: `
         <div class="list-none opened-email" >
-            <h1> {{opendemail.subject}}</h1>
-            <h2> {{opendemail.sentFrom}}</h2>
-            <p> {{opendemail.email}}</p>
+         <h2>Subject: {{opendemail.subject}}</h2>
+            <h2>from: {{opendemail.sentFrom}}</h2>
+         
+            <p>Email: {{opendemail.email}}</p>
             <p> {{opendemail.body}}</p>
            
             <button @click.stop="deleteEmail(opendemail.id)">delete</button>
-            <button @click.stop="markEmail(opendemail.id)">Mark</button>
+          <button @click.stop="markEmail(opendemail.id)">Mark Unread</button>
             <router-link :to="expandEmail"> <button >Expand</button> </router-link>
 
 
@@ -29,14 +30,14 @@ export default {
         }
     },
     computed: {
-       
-        expandEmail(){
+
+        expandEmail() {
             console.log(this.opendemail.id)
 
-            console.log('ffff')
-            // eventBus.$emit('Id', payLoad);
+         
+
             return `details/${this.opendemail.id}`
-           
+
 
         }
     },
@@ -45,14 +46,19 @@ export default {
 
         deleteEmail(id) {
             emailServices.removeEmail(id).then(console.log('removed'))
+            eventBus.$emit('change-status', 'status');
         },
 
         markEmail(id) {
-            emailServices.markRead(id).then(console.log('email marked '))
+            emailServices.markRead(id, 'unread').then
+            (eventBus.$emit('change-status', 'status'),
+        
+            )
+            this.$emit('close', false)
 
         },
-       
-      
+
+
 
 
 
