@@ -5,20 +5,16 @@ import { eventBus } from '../../../js/services/event-bus.service.js'
 
 
 
-
-
 export default {
     template: `
 
-
-   
     <section class="email-list-container">
 
 
     <email-filter  @filtered="setFilter"></email-filter>
         <ul class="mails-list " >
 
-           <email-preview   v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 
+           <email-preview :filterd="filterBy"  v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 
    
         </ul>
     </section>
