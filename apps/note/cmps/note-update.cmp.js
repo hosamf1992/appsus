@@ -11,14 +11,10 @@ export default {
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
                 <img :src="value.img" />
-<<<<<<< HEAD
-                <button @click="removeNote(value.id)" >
-                    <img src="img/note/trash.png"></button>
-=======
+
                 <button @click="removeNote(value.id), closeModal" >
                     <img src="img/note/trash.png">
                 </button>
->>>>>>> 5dfbada5421c848f7409027141bba1b191efb311
                 <button @click="pinNote(value, value.id)">
                     <img v-if="!value.isPinned" src="img/note/pin-keep.png">
                     <img v-if="value.isPinned" src="img/note/pin1.png">
