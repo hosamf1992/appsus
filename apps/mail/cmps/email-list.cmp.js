@@ -18,7 +18,7 @@ export default {
     <email-filter  @filtered="setFilter"></email-filter>
         <ul class="mails-list " >
 
-           <email-preview  v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 
+           <email-preview   v-for="currEmail in emailToShow" :key="currEmail.id"  :email="currEmail"></email-preview> 
    
         </ul>
     </section>
@@ -44,7 +44,12 @@ export default {
     },
     created() {
 
-        emailServices.getEmails().then(res => this.results = res);
+        emailServices.countUnread()
+            .then(res => console.log(res))
+
+
+        emailServices.getEmails()
+            .then(res => this.results = res);
         console.log(this.results);
 
 
@@ -59,11 +64,8 @@ export default {
 
 
             emailServices.getEmails().then(res => this.results = res);
-            // this.results = this.results.filter(mails => (mails.isStarred === true))
 
         })
-
-
 
 
     }
@@ -86,11 +88,16 @@ export default {
 
             }
             if (this.filterBy.isRead === 'Unread') {
-                return temp = this.results.filter(mails => (mails.isRead === false  && regex.test(mails.subject)));
+                return temp = this.results.filter(mails => (mails.isRead === false && regex.test(mails.subject)));
+            }
+            if (this.filterBy.isRead === 'Date') {
+                return temp =this.results.sort((a, b)=> b.sentAt - a.sentAt);
+
             }
 
             if (this.filterBy.isRead === 'All') {
-                return temp
+                return temp = this.results.filter(mails => (regex.test(mails.subject)));
+                // return temp
             }
 
         },

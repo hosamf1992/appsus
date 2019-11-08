@@ -2,8 +2,6 @@
 
 import emailStatus from '../cmps/email-status.cmp.js';
 import emailLinks from '../cmps/links-side.cmp.js';
-import { emailServices } from '../services/email-service.js'
-// import composeEmail from '../cmps/email-compose.cmp.js';
 
 
 
@@ -25,17 +23,12 @@ export default {
     },
     computed: {
 
-        // emailStatus() {
-        //     return emailServices.readMailStatus();
-        //   },
         composeEmail() {
             return `/email/compose`
         },
     },
 
     methods: {
-
-
 
     },
 
