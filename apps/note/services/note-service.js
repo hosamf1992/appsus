@@ -101,5 +101,54 @@ let gNotes = [
         img: '',
         isPinned: false,
         color: 'orange'
-      }
+      },
+      {
+        id: makeId(),
+        content: "I love web",
+        type: 'noteText',
+        createdAt: new Date().getHours(),
+        img: '',
+        isPinned: false,
+        color: 'blue'
+      },
+      {
+        id: makeId(),
+        content: "Real programmers count from 0",
+        type:'noteText',
+        createdAt: new Date().getHours(),
+        img: '',
+        isPinned: false,
+        color: 'white'
+      },
+      {
+          id: makeId(),
+          content: "Study Vue, prepare presentation, cooking course",
+          type: 'noteTodo',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          color: 'red'
+        },
+        {
+          id: makeId(),
+          content: "Visit Saturn",
+          type: 'noteImg',
+          createdAt: new Date().getHours(),
+          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWkepP2_T3zgNJeYP0P5x5zJjSX_WRqtT9bnEvdRqMmgCAh7kE',
+          isPinned: false,
+          color: 'orange'
+        },{
+          id: makeId(),
+          content: "Loop for for",
+          type: 'noteText',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          color: 'gray'
+        },
+  
+
+
+
+
     ]

@@ -5,12 +5,13 @@ export default {
     name: 'note-update',
     template: `
         <section v-if="isShown" class="note-update-container">
+                <button class="close-modal-btn" @click="closeModal">x</button>
                 <input type="text" placeholder="txt" v-model="txt"
                          @keyup="updateNote(value.id, txt)"></input>
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
                 <img :src="value.img" />
-                <button @click="removeNote(value.id)">x</button>
+                <button @click="removeNote(value.id)">Remove</button>
                 <button @click="pinNote(value, value.id)">Pinned</button>
         </section>
     `,
@@ -34,6 +35,9 @@ export default {
           },
         updateNote(noteId, noteNewContent) {
             noteService.updateNote(noteId, noteNewContent)
+        },
+        closeModal() {
+            this.isShown = false
         }
         },
         

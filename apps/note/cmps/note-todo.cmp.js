@@ -4,6 +4,7 @@ import { noteService } from "../services/note-service.js"
 export default {
   template: `
         <section class="note note-text">
+          <h1>To Do:</h1>
           <h1 class="toDo" :toDoTxts="splitValue" v-for="toDoTxt in splitValue" 
           @click="isActive = !isActive" :class="{active: isActive}">{{toDoTxt}}</h1>
             <button @click="removeNote(value.id)">x</button>
