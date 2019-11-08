@@ -42,45 +42,58 @@ export default {
         },
 
         closeEmail(val) {
-           
+
             this.opened = val
             console.log(val)
         },
-        mark(){
+        mark() {
             emailServices.markRead(this.email.id, 'unread').then
-            (eventBus.$emit('change-status', 'status'))
-            this.opened=false
-           
+                (eventBus.$emit('change-status', 'status'))
+            this.opened = false
+
         }
 
 
     },
-    created() {
-       
-    }
 
-    , computed: {
+    // watch: {
+    //     filterd(val) {
+    //         if (val.isRead === 'Unread') 
+    //             {
+    //                 emailServices.markRead(this.email.id, 'unread')
+    //                 .then(eventBus.$emit('change-status', 'status'))
+    //             }
 
-        emailDetailsLink() {
-            return `/email/${this.email.id}`
+
+    //         }
+
+    //     },
+        created() {
+
+        }
+
+        , computed: {
+
+            emailDetailsLink() {
+                return `/email/${this.email.id}`
+            },
+
+            imgMail() {
+
+                if (this.email.isRead === false) {
+                    return `img/mail/close-mail.jpg`
+                }
+                if (this.email.isRead === true) {
+                    return `img/mail/open-mail.jpg`
+                }
+            }
+
+
+
+
         },
+        components: {
+            emailDetails,
 
-        imgMail(){
-
-            if(this.email.isRead===false){
-                return `img/mail/close-mail.jpg`
-            }
-            if(this.email.isRead===true){
-                return `img/mail/open-mail.jpg`
-            }
         }
-
-        
-
-
-    },
-    components: {
-        emailDetails,
-
     }
-}
