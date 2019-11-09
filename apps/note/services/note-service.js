@@ -98,7 +98,7 @@ let gNotes = [
       type:'noteImg',
       toDoIsActive: true,
       createdAt: new Date().getHours(),
-      img: '../img/note/milk.jpg',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSkjEB3ZqBMhCV569nJRL-AZx_twTtxjBrvmGP7yTM-s22su4AU',
       isPinned: false,
       bgc: null
     },
