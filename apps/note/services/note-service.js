@@ -48,6 +48,7 @@ if(note.type === "noteImg") {
 }
   gNotes.unshift(newNote)
   storageService.store(NOTES_KEY, gNotes)
+  
 }
 
 function removeNote(noteId) {

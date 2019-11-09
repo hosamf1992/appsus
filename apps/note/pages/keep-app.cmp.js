@@ -5,6 +5,15 @@ import noteList from '../cmps/note-list.cmp.js';
 import noteFilter from '../cmps/note-filter.cmp.js';
 import noteAdd from '../cmps/add-note.cmp.js';
 import noteUpdate from '../cmps/note-update.cmp.js'
+import {eventBus} from '../../../js/services/event-bus.service.js'
+
+{/* <section class="user-msg" v-if="msg" :class="msg.type">
+<button @click="close">x</button>
+<p>{{msg.txt}}</p>
+</section> */}
+
+
+
 
 export default {
     name: 'note-app',
@@ -15,11 +24,15 @@ export default {
 
         </nav>
         <note-add></note-add>
+
+        <div class="modal" v-if="msg" :class="msg.type">
+        <button>x</button>
+        <p>{{msg.txt}}</p>
+        </div>
+
         <note-update class="modal" v-if="selectedNote" :value="note"
          @closeModal="closeModal" 
-         
-         @dragging.native="dragModal"
-         @dropped.native="dropModal"></note-update>
+         ></note-update>
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
         </section>
     `,
@@ -29,7 +42,8 @@ export default {
          filterBy: null,
          filterByType: null,
          selectedNote: null,
-         note: {}
+         note: {},
+         msg: null
         }
     },
     methods: {
@@ -45,15 +59,11 @@ export default {
             this.filterBy = filter;
             },
         },
-        // activateDragModal(){
-        //     console.log('hi')
+        // closeMsg(){
+        //     console.log('msg')
+        //     this.msg = null;
         // },
-        dragModal(){
-            console.log('hi')
-        },
-        dropModal(){
-            console.log('hi')
-        },
+        
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
@@ -66,6 +76,13 @@ export default {
     },
     created(){
         this.notes = noteService.getNotes()
+        eventBus.$on('show-msg', (msg)=>{
+                    console.log('note was added');
+                    this.msg = msg;
+                    setTimeout(()=>{
+                        this.msg = null;
+                    }, 1500)
+                })
     },
     components: {
     noteFilter,
