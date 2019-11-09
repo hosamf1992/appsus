@@ -18,6 +18,10 @@ html {
     text-decoration-line: line-through;
 }
 
+.isHidden {
+    display: none;
+}
+
 
 .nav-container {
     background-color: #202124;
@@ -61,6 +65,7 @@ html {
     width:fit-content;
     padding: 2em;
     color: white;
+    opacity: 0.97;
 }
 
 .close-modal-btn {
