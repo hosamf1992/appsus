@@ -10,31 +10,23 @@ export default {
         <section class="note-list-container flex wrap flex-row">
             <div v-for="(note, idx) in notes">
                     <component :is="note.type"  :value="note" 
-                    @click.native="onSelectNote(note.id)" >
-                    
+                    @click.native="onSelectNote(note.id)" >    
                 </component>
             </div>
-            
         </section>
     `,
     data() {
             return {
-                    selectedNote: false,
-                 
+                    selectedNote: false,      
         }
     },
     methods: {  
         onSelectNote(noteId) {
             this.selectedNote = noteId;
             this.$emit('selected', noteId);
-            },
-         
+            },  
     },
-    computed: {
-       
-    },
-    components: {
-        
+    components: {  
         noteTodo,
         noteText,
         noteImg
