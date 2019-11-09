@@ -1,22 +1,29 @@
-import { noteService } from "../services/note-service.js"
 
+import noteTodoDetails from './note-todo-details.cmp.js'
 
 export default {
   template: `
         <section class="note note-text" :style="{ backgroundColor: value.bgc}">
-          <h1>To Do:</h1>
-          <h1 :toDoTxts="splitValue" v-for="toDoTxt in splitValue" 
-              @click="isActive = !isActive" :class="{notActive: !isActive}">{{toDoTxt}}</h1>
+          <div>To Do:</div>
+          <div :toDoTxts="splitValue" v-for="toDoTxt in splitValue" >
+              <note-todo-details  
+                :todoItem="toDoTxt">
+              </note-todo-details>
+          </div>
           <button v-if="value.isPinned"><img src="img/note/pin1.png"></button> 
         </section>
         `,
   props: ["value"],
   data() {
     return {
-      isActive: true
+        isActive: true,
+
     }
 },
   methods: {
+    createTodo () {
+      toDoTxt
+    }
     },
 
   computed: {
@@ -25,5 +32,8 @@ export default {
       let splitStr = str.split(", ")
       return splitStr
     }
+  },
+  components: {
+      noteTodoDetails
   }
 };
