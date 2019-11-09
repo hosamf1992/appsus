@@ -3,7 +3,9 @@ import { emailServices } from '../services/email-service.js';
 
 export default {
     template: `
-        <section  >
+.email-expanded{
+    <section class="email-expanded" >
+
     <h2> Sent From: {{email.sentFrom}} </h2>
     <h2> Email: {{email.email}}  </h2>
     <h2> Subject: <span v-if="replyClicked">Re:</span> {{email.subject}}  </h2>
@@ -14,6 +16,7 @@ export default {
       <button class="mails-btn" v-if="!replyClicked" @click="reply" >Replay</button>
       <button class="mails-btn" v-if="replyClicked" @click="sendreply" >Send</button>
     </div>
+    <div class="border-bottom"></div>
         </section>
     `,
 
@@ -25,10 +28,6 @@ export default {
             show: true,
             replyClicked: false,
             replyTxt: '',
-
-
-
-
 
         }
     },

@@ -16,7 +16,6 @@ export default {
     template: `
      
       <section class="email-container">
-     
       <email-side ></email-side>
       <router-view></router-view>
 
@@ -33,12 +32,8 @@ export default {
 
     },
     methods: {
-
-        // setFilter(filterBy) {
-        //     console.log('Parent got filter:', filterBy);
-        //     this.filterBy = filterBy
-        // },
-      
+       
+     
     
     },
     computed: {

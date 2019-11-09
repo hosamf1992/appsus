@@ -15,7 +15,7 @@ export default {
             <long-text :txt="opendemail.body"></long-text>
            
     
-            <router-link :to="expandEmail"> <button class="mails-btn" >Read More</button> </router-link>
+            <router-link class="read-btn" :to="expandEmail"> <button class="mails-btn" >Read More</button> </router-link>
     
             <router-view></router-view>
 

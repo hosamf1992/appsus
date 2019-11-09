@@ -2,6 +2,10 @@
 
 @import './note/main-note.css';
 
+body{
+  
+padding: 10px;
+}
 /* helpers */
 
 .flex{
@@ -74,8 +78,15 @@ cursor: pointer
 .flex-col{
     flex-direction: column;
 }
-.reply-area{
-    resize: none;
-    height: 100%;
-    width: 90%;
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+.border-top{
+    border-top: 1px solid black;
+}
+.stared-icon{
+    margin-bottom: 17px;
+}
+.text-decor{
+    text-decoration: none;
 }

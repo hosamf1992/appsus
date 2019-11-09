@@ -1,13 +1,18 @@
 li {
     list-style: none;
 }
-
+a{
+    text-decoration: none;
+}
 .email-title {
     color: blue
 }
 
+
 .email-status {
     border-style: solid;
+    transform: translate(10px, 10px);
+    width: 100%;
 }
 
 .email-inner {
@@ -16,7 +21,7 @@ li {
     background-color: brown;
 }
 
-.email-outer{
+.email-outer {
     background-color: aliceblue;
 }
 
@@ -25,15 +30,19 @@ li {
     text-align: center;
     height: 0;
 }
-.email-list-container{
-    margin-top:10px
+
+.email-list-container {
+    margin-top: 10px;
+    margin-right: 10px;
 }
+
 .email-container {
     display: grid;
-    grid-template-columns: 12% auto;
-    grid-gap: 20px;
+    grid-template-columns: 15% auto;
+   
     margin-top: 30px;
     background-color: lightgray;
+    height: 100vh;
 }
 
 .compose-btn {
@@ -53,14 +62,16 @@ li {
 }
 
 .mail-side {
-    border-right: 1px solid;
-    margin-top:10px
+    margin-top: 30px
+}
+.mails-list{
+    margin-left: -10px;
 }
 
 .mails-list li {
     grid-template-columns: repeat(3, 1fr);
     background-color: white;
-    border: 1px solid;
+    border: 0.5px solid gray;
     align-items: center;
     /* height: 70px; */
 }
@@ -73,24 +84,42 @@ li {
 
 .email-form {
     grid-template-rows: repeat(10, 1fr);
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
 }
-
+.email-expanded{
+    margin-left: 20px;
+}
 .area-txt {
     grid-row: 5/10;
+    resize: none;
+}
+.compose{
+    height: 50px;
 }
 
 form input {
-    height: 30px;
+    /* height: 30px; */
 }
 
-
+.form-trash {
+    color: #808080;
+    font-size: 20px;
+    margin-right: 5px;
+}
 
 .yellow {
-   color:rgb(181, 129, 33);
+    color: rgb(181, 129, 33);
 }
 
 .readed {
     background-color: darkgrey;
+}
+.read-btn{
+    display: flex;
+    flex-direction: row-reverse;
+
 }
 
 .outer-mail {
@@ -106,20 +135,23 @@ form input {
     margin-top: 10px;
 }
 
-.fa-star{
+.list-star {
     margin-left: 5px;
-    margin-top: 15px;
-    font-size: 20px;
+    margin-top: 15px; 
+     font-size: 20px;
     /* color: rgb(195, 141, 40); */
-  
 }
-.trash{
+
+.trash {
     margin-top: 18px;
+    font-size: 20px;
 }
-.count-inbox{
+
+.count-inbox {
     font-size: 14px;
 }
-.mails-btn{
+
+.mails-btn {
     background-color: #808080;
     border: none;
     color: white;
@@ -132,3 +164,80 @@ form input {
     cursor: pointer;
 }
 
+.form-title {
+    color: white;
+    font-size: 24px;
+}
+
+.compose-bar {
+    background-color: #000000ba;
+    padding-left: 10px;
+    height: 50px;
+}
+
+.reply-area {
+    resize: none;
+    height: 60%;
+    width: 97%;
+}
+.txt-links{
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:590px) {
+  
+   .txt-links{
+       display: none;
+   }
+   .mail-side a{
+       margin-bottom: 40px;
+   }
+   .mail-side {
+    margin-left: 15px;
+}
+   .email-status{
+       display: none;
+   }
+  .email-container{
+    grid-template-columns: 1% auto;
+  }
+  .email-expanded {
+    margin-left: 35px;
+}
+.email-form {
+  
+   
+    margin-left: 15px;
+   
+}
+
+.item{
+    font-size: 10px;
+}
+.email-box{
+    height: 20px;
+    width: 20px;
+}
+.trash {
+    margin-top: 15px;
+    font-size: 15px;
+}
+.list-star {
+  
+    font-size: 15px;
+    
+}
+.opened-email h2{
+    font-size: 18px;
+}
+  
+}

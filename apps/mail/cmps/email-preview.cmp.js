@@ -10,8 +10,8 @@ export default {
             <li class="cursor"  @click="openEmail" >
                <div class="grid outer-mail" :class="{ readed: !email.isRead }">
                <span @click.stop="starEmail(email.id)">
-               <i v-if="!email.isStarred" class="far fa-star yellow"  > </i>
-               <i v-if="email.isStarred" class="fas fa-star yellow"  >    </i>
+               <i v-if="!email.isStarred" class="far fa-star yellow list-star"  > </i>
+               <i v-if="email.isStarred" class="fas fa-star yellow list-star"  >    </i>
               
                </span>
                 <h1 class="item">  {{email.sentFrom}}</h1>

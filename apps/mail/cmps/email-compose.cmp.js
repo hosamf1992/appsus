@@ -6,8 +6,10 @@ export default {
 
     template: `
     <section class="email-form">
-     <h1>New Message</h1>
     <form class="email-form grid" @submit.prevent="send">
+    <div class="flex compose-bar align-center">
+    <h1 class="form-title">New Message</h1>
+    </div>
     <input  type="text" placeholder="To:" v-model="newMail.to" />
     <input  type="text" placeholder="From:" v-model="newMail.from" />
     <input  type="text" placeholder="Bcc:" v-model="newMail.bcc" />
@@ -15,12 +17,19 @@ export default {
 
  
     <textarea class="area-txt" placeholder="Body" v-model="newMail.body" ></textarea>
-    
-    <button >Send</button>
+    <div class="flex space-between align-center">
+    <button class="mails-btn">Send</button>
+    <router-link :to="deleteEmail">
+    <i class="fa fa-trash form-trash" aria-hidden="true"></i>
+
   
+    
+    
+    </router-link>
+    </div>
+    <div class="border-bottom"></div>
 
 </form>
- <router-link :to="deleteEmail"> <button >Delete</button> </router-link>
 
     </section>
     `,
