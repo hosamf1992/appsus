@@ -4,16 +4,17 @@ import { noteService } from "../services/note-service.js"
 export default {
     name: 'note-update',
     template: `
-        <section  class="note-update-container">
+        <section  class="note-update-container ">
                 <button class="close-modal-btn" @click="closeModal">x</button>
 
-                <input type="text" placeholder="txt" v-model="txt"
-                    @keyup="updateNoteContent(value.id, txt)"></input>
+                <input class="modalInput" type="text" placeholder="value.content" 
+                    v-model="value.content" @keyup="updateNoteContent(value.id, value.content)">
+                </input>
 
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
 
-                <img :src="value.img" />
+                <img :src="value.img" >
 
                 <button @click="removeNote(value.id)" >
                     <img src="img/note/trash.png"></button>
@@ -23,16 +24,16 @@ export default {
                     <img v-if="value.isPinned" src="img/note/pin1.png">
                 </button>
 
-                <input type="color" placeholder="#202124" v-model="bgc"
+                <input type="color"  v-model="bgc"
                      @change="updateNoteBGC(value.id, bgc)" >
                 </input>
-
+                
         </section>
     `,
     props: ["value"],
     data() { return {
         txt: this.value.content, 
-        bgc: null 
+        bgc: '#ffffff'
     }
 },
     methods: {
@@ -57,7 +58,7 @@ export default {
 
         updateNoteBGC(noteId, bgc) {
             noteService.updateNoteBGC(noteId, bgc)
-            .then(()=> {return})
+                .then(()=> {return})
         },
 
         closeModal() {

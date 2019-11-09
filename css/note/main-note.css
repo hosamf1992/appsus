@@ -64,6 +64,10 @@
     opacity: 0.97;
 }
 
+.modalInput {
+    width: 17em;
+}
+
 .close-modal-btn {
     position: absolute;
     right: 2%;
