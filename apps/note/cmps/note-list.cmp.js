@@ -4,8 +4,6 @@ import noteText from './note-text.cmp.js'
 import noteTodo from './note-todo.cmp.js'
 import noteImg from './note-img.cmp.js'
 
-
-
 export default {
     props: ['notes'],
     template: `
@@ -22,7 +20,7 @@ export default {
     data() {
             return {
                     selectedNote: false,
-                    // isClicked: false,
+                 
         }
     },
     methods: {  
