@@ -43,7 +43,7 @@ a{
     margin-top: 30px;
     background-color: lightgray;
     height: 100vh;
-    font-family: cursive
+    font-family: cursive monospace sans-serif;
 }
 
 

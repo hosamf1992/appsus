@@ -1,92 +1,139 @@
 @import './mail/main-mail.css';
-
 @import './note/main-note.css';
-
-body{
-  
-padding: 10px;
+body {
+    padding: 10px;
 }
-/* helpers */
 
-.flex{
+
+
+.menu-btn {
+    display: block;
+    position: absolute;
+    top: 29px;
+    right: 10px;
+    background-color: unset;
+    /* color: white; */
+    border: black;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.menu-modal {
+    display: grid;
+    /* grid-gap: 33px; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background: #f9f6f6;
+    border: 1px solid #ccc;
+    border-color: rgba(0, 0, 0, .2);
+    color: #000;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 64px;
+    border-radius: 2px;
+    height: 200px;
+    width: 200px;
+    right: 16px;
+    z-index: 1;
+}
+.menu-modal a{
+    color: black
+}
+
+.menu-item {
+    font-size: 30px;
     display: flex;
-}
-
-.align-center{
-    align-items: center;
-}
-
-.justify-center{
-    justify-content: center;
-}
-.flex-column{
     flex-direction: column;
 }
 
-.flex-row{
+.inner-txtmenu {
+    font-size: 15px;
+}
+
+/* helpers */
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
     flex-direction: row;
 }
-.grid{
+
+.grid {
     display: grid;
 }
- 
 
-.list-none{
+.list-none {
     list-style: none;
-    
 }
 
-.margin-center{
+.margin-center {
     margin: 0 auto;
     display: block;
 }
 
-.float-right{
+.float-right {
     float: right;
 }
 
-.float-left{
+.float-left {
     float: left;
 }
-.text-center{
-text-align:center;
 
+.text-center {
+    text-align: center;
 }
 
-.cursor{
-cursor: pointer
-
+.cursor {
+    cursor: pointer
 }
 
 .space-between {
     justify-content: space-between;
 }
 
-.space-around{
+.space-around {
     justify-content: space-around
 }
 
-.wrap{
- flex-wrap: wrap;
-
+.wrap {
+    flex-wrap: wrap;
 }
 
-.flex-row{
+.flex-row {
     flex-direction: row;
 }
 
-.flex-col{
+.flex-col {
     flex-direction: column;
 }
-.border-bottom{
+
+.border-bottom {
     border-bottom: 1px solid black;
 }
-.border-top{
+
+.border-top {
     border-top: 1px solid black;
 }
-.stared-icon{
+
+.stared-icon {
     margin-bottom: 17px;
 }
-.text-decor{
+
+.text-decor {
     text-decoration: none;
 }
