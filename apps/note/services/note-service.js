@@ -103,7 +103,7 @@ let gNotes = [
     },
     {
         id: makeId(),
-        content: "Visit barber, collect shirt, take car to repair",
+        content: "Visit barber, Collect shirt, Repair the car",
         type: 'noteTodo',
         createdAt: new Date().getHours(),
         img: '',
@@ -138,7 +138,7 @@ let gNotes = [
       },
       {
           id: makeId(),
-          content: "Study Vue, prepare presentation, cooking course",
+          content: "Study Vue, Prepare presentation, Cooking course",
           type: 'noteTodo',
           createdAt: new Date().getHours(),
           img: '',

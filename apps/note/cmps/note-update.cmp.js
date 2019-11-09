@@ -24,7 +24,7 @@ export default {
                     <img v-if="value.isPinned" src="img/note/pin1.png">
                 </button>
 
-                <input type="color"  v-model="bgc"
+                <input class="inputColor" type="color" v-model="bgc"
                      @change="updateNoteBGC(value.id, bgc)" >
                 </input>
                 
@@ -33,7 +33,7 @@ export default {
     props: ["value"],
     data() { return {
         txt: this.value.content, 
-        bgc: '#ffffff'
+        bgc: '#ffff00'
     }
 },
     methods: {

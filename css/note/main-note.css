@@ -96,6 +96,11 @@
     width: 25em;
 }
 
+.inputColor {
+    height: 2.5em;
+    width: 2.5em;
+}
+
 .select {
     border-radius: 2px;
     height: 43px;
