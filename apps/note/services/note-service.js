@@ -51,40 +51,44 @@ function removeNote(noteId) {
     var idx = gNotes.findIndex(note => note.id === noteId)
     if (idx !== -1) gNotes.splice(idx,1)
     storageService.store(NOTES_KEY, gNotes)
+    return Promise.resolve(idx);
 }
 
 
 function pinNote(note, noteId){
     let idx = gNotes.findIndex(noteTodo => noteTodo.id === noteId);
     
-if (gNotes[idx].isPinned === false) {
-    gNotes[idx].isPinned = !gNotes[idx].isPinned;
-    gNotes.splice(idx,1)
-    gNotes.splice(0, 0, note)
+    if (gNotes[idx].isPinned === false) {
+        gNotes[idx].isPinned = !gNotes[idx].isPinned;
+        gNotes.splice(idx,1)
+        gNotes.splice(0, 0, note)
     } else {
-      let pinnedIdx = gNotes.findIndex(note => note.isPinned === false);
-      gNotes[idx].isPinned = !gNotes[idx].isPinned;
-      gNotes.splice(idx,1)
-      gNotes.splice(pinnedIdx-1, 0, note)
+        let pinnedIdx = gNotes.findIndex(note => note.isPinned === false);
+        gNotes[idx].isPinned = !gNotes[idx].isPinned;
+        gNotes.splice(idx,1)
+        gNotes.splice(pinnedIdx-1, 0, note)
     }
     storageService.store(NOTES_KEY, gNotes)
-    }
+    return Promise.resolve(gNotes);
+}
 
 function findNote(noteId) {
     let note = gNotes.find(note => note.id === noteId);
-    return note
+    return note;
 }
 
 function updateNoteContent(noteId, noteNewContent) {
     var idx = gNotes.findIndex(note => note.id === noteId);
     if (idx !== -1) gNotes[idx].content = noteNewContent;
     storageService.store(NOTES_KEY, gNotes)
+    return Promise.resolve(idx);
 }
 
 function updateNoteBGC(noteId, bgc) {
   var idx = gNotes.findIndex(note => note.id === noteId);
     if (idx !== -1) gNotes[idx].bgc = bgc;
     storageService.store(NOTES_KEY, gNotes)
+    return Promise.resolve(idx);
 }
 
 let gNotes = [

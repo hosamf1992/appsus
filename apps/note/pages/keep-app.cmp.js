@@ -69,7 +69,6 @@ export default {
                 this.notes = notes
         })
         eventBus.$on('show-msg', (msg)=>{
-                    console.log('note was added');
                     this.msg = msg;
                     setTimeout(()=>{
                         this.msg = null;

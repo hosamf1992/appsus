@@ -38,21 +38,26 @@ export default {
     methods: {
 
         removeNote(noteId) {
-          noteService.removeNote(noteId);
-          this.isShown = false;
-          this.closeModal()
+          noteService.removeNote(noteId)
+            .then(()=> {
+                this.isShown = false;
+                this.closeModal()
+            })
           },
 
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
+            .then(()=> {return})
           },
 
         updateNoteContent(noteId, noteNewContent) {
             noteService.updateNoteContent(noteId, noteNewContent)
+            .then(()=> {return})
         },
 
         updateNoteBGC(noteId, bgc) {
             noteService.updateNoteBGC(noteId, bgc)
+            .then(()=> {return})
         },
 
         closeModal() {
