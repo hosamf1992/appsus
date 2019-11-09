@@ -7,7 +7,8 @@ export default {
           <div 
           :class="{notActive: !toDoIsActive, isHidden: !toDoIsShown}" @click="markNote">
            {{todo.txt}}   
-           <button @click="deleteToDo" :class="{isHidden: !btnIsShown}"><img src="img/note/trash-small.png"></button>
+           <button @click="deleteToDo" :class="{isHidden: !btnIsShown}">
+             x</button>
           </div>
           
         </section>

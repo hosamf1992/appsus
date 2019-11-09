@@ -15,7 +15,11 @@ export default {
 
         </nav>
         <note-add></note-add>
-        <note-update class="modal" v-if="selectedNote" :value="note" @closeModal="closeModal"></note-update>
+        <note-update class="modal" v-if="selectedNote" :value="note"
+         @closeModal="closeModal" 
+         
+         @dragging.native="dragModal"
+         @dropped.native="dropModal"></note-update>
             <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
         </section>
     `,
@@ -40,6 +44,15 @@ export default {
         setFilter(filter) {
             this.filterBy = filter;
             },
+        },
+        // activateDragModal(){
+        //     console.log('hi')
+        // },
+        dragModal(){
+            console.log('hi')
+        },
+        dropModal(){
+            console.log('hi')
         },
     computed: {
         notesToShow() {
