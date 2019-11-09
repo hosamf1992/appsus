@@ -180,4 +180,13 @@ let gNotes = [
           isPinned: false,
           bgc: null
         },
+        {
+          id: makeId(),
+          content: "Real estate meeting",
+          type:'noteText',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          bgc: null
+        },
     ]
