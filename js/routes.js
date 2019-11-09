@@ -9,8 +9,10 @@ import emailList from '../apps/mail/cmps/email-list.cmp.js'
 
 
 const myRoutes = [
-    
+   
     {
+        
+      
         path: '/email',
         component: mailApp,
         children: [
@@ -33,6 +35,10 @@ const myRoutes = [
     {
         path: '/keep',
         component: keepApp
+    },
+    {
+        path:  '/',
+        redirect: '/email/list'
     },
    
     
