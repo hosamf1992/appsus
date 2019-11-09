@@ -6,20 +6,13 @@ export default {
         <section class="note note-text" :style="{ backgroundColor: value.bgc}">
           <div>To Do:</div>
           <div :toDoTxts="splitValue" v-for="toDoTxt in splitValue" 
-          :createToDos="createToDos(toDoTxt)">
-
+                :createToDos="createToDos(toDoTxt)">
               <todo-details :todo="todo"></todo-details>
-              
           </div>
           <button v-if="value.isPinned"><img src="img/note/pin1.png"></button> 
         </section>
         `,
   props: ["value"],
-  data() {
-    return {
-       
-    }
-},
   methods: {
     createToDos(toDoTxt){
       let todo = {
@@ -30,8 +23,7 @@ export default {
         }
         this.todo = todo
     }
-     },
-
+  },
   computed: {
     splitValue() {
       let str = this.value.content

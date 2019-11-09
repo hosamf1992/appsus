@@ -30,10 +30,8 @@ export default {
             type:''
         }
     },
-    
     methods: {
         onFilterBy() {
-
             this.$emit('filtered', this.filterBy)
         },
         

@@ -1,26 +1,26 @@
 'use strict'
 
-
 export default {
   template: `
         <section>
           <div 
-          :class="{notActive: !toDoIsActive, isHidden: !toDoIsShown}" @click="markNote">
-           {{todo.txt}}   
+          :class="{notActive: !toDoIsActive, isHidden: !toDoIsShown}" 
+          @click="markNote">{{todo.txt}}   
            <button @click="deleteToDo" :class="{isHidden: !btnIsShown}">
              x</button>
           </div>
           
         </section>
         `,
-        data(){ 
-          return{
+  props: ["todo"],
+  data(){ 
+      return{
             toDoIsActive: true,
             toDoIsShown: true,
             btnIsShown: true,
           }
         },
-  props: ["todo"],
+
   methods: {
           markNote(){
           this.toDoIsActive = !this.toDoIsActive 

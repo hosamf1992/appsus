@@ -1,4 +1,4 @@
-import { noteService } from "../services/note-service.js"
+
 
 export default {
   template: `
@@ -11,17 +11,5 @@ export default {
         </section>
         `,
   props: ["value"],
-  data () { 
-    return {
-
-    }
-
-  },
-  methods: {
-
-    },
-  computed: {
-    
-  }
 };
 

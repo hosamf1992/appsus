@@ -8,7 +8,7 @@ export default {
                 <button class="close-modal-btn" @click="closeModal">x</button>
 
                 <input type="text" placeholder="txt" v-model="txt"
-                         @keyup="updateNoteContent(value.id, txt)"></input>
+                    @keyup="updateNoteContent(value.id, txt)"></input>
 
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
@@ -30,31 +30,34 @@ export default {
         </section>
     `,
     props: ["value"],
-
     data() { return {
         txt: this.value.content, 
         bgc: null 
     }
-
-    },
+},
     methods: {
 
         removeNote(noteId) {
-          noteService.removeNote(noteId);
-          this.isShown = false;
-          this.closeModal()
+          noteService.removeNote(noteId)
+            .then(()=> {
+                this.isShown = false;
+                this.closeModal()
+            })
           },
 
         pinNote(note, noteId) {
           noteService.pinNote(note, noteId)
+            .then(()=> {return})
           },
 
         updateNoteContent(noteId, noteNewContent) {
             noteService.updateNoteContent(noteId, noteNewContent)
+            .then(()=> {return})
         },
 
         updateNoteBGC(noteId, bgc) {
             noteService.updateNoteBGC(noteId, bgc)
+            .then(()=> {return})
         },
 
         closeModal() {

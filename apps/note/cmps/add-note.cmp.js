@@ -15,14 +15,14 @@ export default {
         </select>
         <input class="input" type="text" :placeholder="[[placeholderText()]]"
          v-model="val.txt" @keyup.enter="addNote"/>
-</section>
+    </section>
         `,
   data() {
     return {
-      val: {
-          type: '',
-          txt: ''
-      },
+        val: {
+            type: '',
+            txt: ''
+        },
       placeholder: {
         todo: 'Add a new note: Enter comma seperated list...',
         img: 'Add a new note: Enter image url',
@@ -33,15 +33,16 @@ export default {
   },
 
   methods: {
-
     addNote() {
-    noteService.addNote(this.val);
-    const msg = {
-              txt: `note added Succefully`,
-              type: 'success'
-                }
-    if (this.val.type) eventBus.$emit('show-msg', msg)
-    },
+    noteService.addNote(this.val)
+      .then(()=> {
+        const msg = {
+          txt: `note added Succefully`,
+          type: 'success'
+            }
+        if (this.val.type) eventBus.$emit('show-msg', msg)
+  })
+},
     
     placeholderText(){
       if (this.val.type === 'noteText') {return this.placeholder.txt}
@@ -50,7 +51,5 @@ export default {
       else if (this.val.type === 'noteTodo') {return this.placeholder.todo}
     },
   },
-  computed: {
-   
-  }
+  
 };

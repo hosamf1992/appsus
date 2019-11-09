@@ -7,63 +7,52 @@ import noteAdd from '../cmps/add-note.cmp.js';
 import noteUpdate from '../cmps/note-update.cmp.js'
 import {eventBus} from '../../../js/services/event-bus.service.js'
 
-{/* <section class="user-msg" v-if="msg" :class="msg.type">
-<button @click="close">x</button>
-<p>{{msg.txt}}</p>
-</section> */}
-
-
-
-
 export default {
     name: 'note-app',
     template: `
         <section class="note-app-container">
         <nav  class="nav-container flex align-center justify-center">
             <note-filter @filtered="setFilter"></note-filter> 
-
         </nav>
+
         <note-add></note-add>
 
         <div class="modal" v-if="msg" :class="msg.type">
-        <button>x</button>
-        <p>{{msg.txt}}</p>
+            <button>x</button>
+            <p>{{msg.txt}}</p>
         </div>
 
         <note-update class="modal" v-if="selectedNote" :value="note"
-         @closeModal="closeModal" 
-         ></note-update>
-            <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
+         @closeModal="closeModal"></note-update>
+
+        <note-list :notes="notesToShow" @selected="selectNote"> </note-list>
+        
         </section>
     `,
     data() {
         return{
-         notes: [],
-         filterBy: null,
-         filterByType: null,
-         selectedNote: null,
-         note: {},
-         msg: null
+            notes: [],
+            filterBy: null,
+            filterByType: null,
+            selectedNote: null,
+            note: {},
+            msg: null
         }
     },
     methods: {
         selectNote(noteId) {
-        this.selectedNote = true;
-        let noteInModal = noteService.findNote(noteId);
-        this.note = noteInModal;
+            this.selectedNote = true;
+            let noteInModal = noteService.findNote(noteId);
+            this.note = noteInModal;
             },
         closeModal (){
-        this.selectedNote = false;
+            this.selectedNote = false;
         },
         setFilter(filter) {
             this.filterBy = filter;
             },
         },
-        // closeMsg(){
-        //     console.log('msg')
-        //     this.msg = null;
-        // },
-        
+
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
@@ -75,9 +64,11 @@ export default {
         }
     },
     created(){
-        this.notes = noteService.getNotes()
+        noteService.getNotes()
+            .then(notes=> {
+                this.notes = notes
+        })
         eventBus.$on('show-msg', (msg)=>{
-                    console.log('note was added');
                     this.msg = msg;
                     setTimeout(()=>{
                         this.msg = null;
@@ -85,9 +76,19 @@ export default {
                 })
     },
     components: {
-    noteFilter,
-    noteList,
-    noteUpdate,
-    noteAdd
+            noteFilter,
+            noteList,
+            noteUpdate,
+            noteAdd
     }
 }
+// created() {
+//     dogService.getDogs()
+//         .then(dogs => {
+//             this.dogs = dogs
+            
+           
+//             console.log('Dogs', dogs);
+        
+//         })
+// },
