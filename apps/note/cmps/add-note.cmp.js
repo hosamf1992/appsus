@@ -6,7 +6,7 @@ import {eventBus} from '../../../js/services/event-bus.service.js'
 export default {
   template: `
     <section class="add-note-container flex align-center justify-center">
-    <label class="label">Select new note type: </label>  
+    <label class="label">Add a new note:  </label>  
     <select class="select" v-model="val.type">
           <option></option>
           <option value="noteText">Text</option>
