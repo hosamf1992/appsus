@@ -114,3 +114,9 @@ html {
 .label {
     color: yellow;
 }
+
+button {
+    padding: auto;
+    border:none;
+    text-decoration: none;
+}
