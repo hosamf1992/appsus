@@ -43,23 +43,10 @@ a{
     margin-top: 30px;
     background-color: lightgray;
     height: 100vh;
+    font-family: cursive
 }
 
-.compose-btn {
-    background-color: #DB3A0D;
-    height: 35px;
-    width: 125px;
-    text-align: center;
-    line-height: 28px;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: Helvetica;
-    font-weight: 700;
-    /* font-size: 11px; */
-    border-radius: 15px;
-    border: 1px solid #DB3A0D;
-}
+
 
 .mail-side {
     margin-top: 30px
@@ -119,6 +106,8 @@ form input {
 .read-btn{
     display: flex;
     flex-direction: row-reverse;
+    font-family: cursive
+
 
 }
 
@@ -162,6 +151,8 @@ form input {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: cursive
+
 }
 
 .form-title {
@@ -209,6 +200,7 @@ form input {
    }
   .email-container{
     grid-template-columns: 1% auto;
+
   }
   .email-expanded {
     margin-left: 35px;

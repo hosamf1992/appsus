@@ -15,7 +15,7 @@ export default {
 
      
     </select>
-    <button @click=filter>Search</button>
+    <button class="mails-btn" @click=filter>Search</button>
     </section>
     `,
 
