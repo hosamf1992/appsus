@@ -28,9 +28,10 @@ let gEmails = [
     id: makeId(),
     email: 'nana@gmail.com',
     sentFrom: 'Walla',
-    subject: 'HELLO DUDE-HELLO DUDE',
-    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
-    ,
+    subject: 'Learn javascript in 12 weeks!!!!',
+    body: "Fake email service that does not require registration and displays email instantly. Fake email generator works with any services and there is no limit.",
+    
+    
     isRead: false,
     time: getTime(),
     isStarred: false,
@@ -42,7 +43,7 @@ let gEmails = [
     id: makeId(),
     email: 'puki@gmail.com',
     sentFrom: 'Hosam',
-    subject: 'HELLO JavaScript-HELLO JavaScript',
+    subject: 'you won 1000 dollars, read more..',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
 
     isRead: false,
@@ -53,10 +54,10 @@ let gEmails = [
   },
   {
     id: makeId(),
-    email: 'shmoki@gmail.com',
+    email: 'luki@gmail.com',
     sentFrom: 'Puki',
-    subject: 'HELLO JavaScript-HELLO JavaScript',
-    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    subject: 'Remove ads in 1 click!',
+    body: "Ads allow us to feed your daily addiction for the world's greatest news, sport and gossip. If your favourite price for MailOnline is free, please allow ads on this site."
     ,
     isRead: false,
     time: getTime(),
@@ -67,50 +68,24 @@ let gEmails = [
   },
   {
     id: makeId(),
-    email: 'shmoki@gmail.com',
-    sentFrom: 'Hosam',
-    subject: 'HELLO JavaScript-HELLO JavaScript',
-    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
-    ,
-    isRead: false,
-    time: getTime(),
-    isStarred: false,
-    sentAt: Date.now()
-
-
-  },
-  {
-    id: makeId(),
-    email: 'shmoki@gmail.com',
-    sentFrom: 'Golda',
-    subject: 'HELLO JavaScript-HELLO JavaScript',
-    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
-    ,
-    isRead: false,
-    time: getTime(),
-    isStarred: false,
-    sentAt: Date.now()
-
-
-  }, {
-    id: makeId(),
-    email: 'shmoki@gmail.com',
-    sentFrom: 'Rita',
-    subject: 'HELLO JavaScript-HELLO JavaScript',
-    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
-    ,
-    isRead: false,
-    time: getTime(),
-    isStarred: false,
-    sentAt: Date.now()
-
-
-  }, {
-    id: makeId(),
-    email: 'shmoki@gmail.com',
+    email: 'ads1@gmail.com',
     sentFrom: 'Sasha',
     subject: 'HELLO JavaScript-HELLO JavaScript',
-    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    body: "Email spam, also referred to as junk email, is unsolicited messages sent in bulk by email ... Spam is also a medium for fraudsters to scam users into entering personal information on fake Web sites using emails forged to look like they are from ... Often, image spam contains nonsensical, computer-generated text which simply",
+   
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt: Date.now()
+
+
+  },
+  {
+    id: makeId(),
+    email: 'grey@gmail.com',
+    sentFrom: 'Golda',
+    subject: 'Learn How To Pass Data Between Routes In A Vue.js Web Application',
+    body: "Often, when building navigation into your application, you’ll find that you need to pass data from one screen to another. For example, maybe you’re following the master-detail pattern where you have a list of data and you get more information about a particular item in the list by drilling deeper."
     ,
     isRead: false,
     time: getTime(),
@@ -120,9 +95,9 @@ let gEmails = [
 
   }, {
     id: makeId(),
-    email: 'shmoki@gmail.com',
-    sentFrom: 'alex',
-    subject: 'HELLO JavaScript-HELLO JavaScript',
+    email: 'w3schools@gmail.com',
+    sentFrom: 'Rita',
+    subject: 'Using Query Parameters to Pass Data Between Routes',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
     ,
     isRead: false,
@@ -131,7 +106,49 @@ let gEmails = [
     sentAt: Date.now()
 
 
-  }
+  },
+  
+  {
+    id: makeId(),
+    email: 'ads1@gmail.com',
+    sentFrom: 'Sasha',
+    subject: 'HELLO JavaScript-HELLO JavaScript',
+    body: "Email spam, also referred to as junk email, is unsolicited messages sent in bulk by email ... Spam is also a medium for fraudsters to scam users into entering personal information on fake Web sites using emails forged to look like they are from ... Often, image spam contains nonsensical, computer-generated text which simply",
+ 
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt: Date.now()
+
+
+  },
+  {
+    id: makeId(),
+    email: 'grey@gmail.com',
+    sentFrom: 'Golda',
+    subject: 'Learn How To Pass Data Between Routes In A Vue.js Web Application',
+    body: "Often, when building navigation into your application, you’ll find that you need to pass data from one screen to another. For example, maybe you’re following the master-detail pattern where you have a list of data and you get more information about a particular item in the list by drilling deeper."
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt: Date.now()
+
+
+  }, {
+    id: makeId(),
+    email: 'w3schools@gmail.com',
+    sentFrom: 'Rita',
+    subject: 'Using Query Parameters to Pass Data Between Routes',
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
+    ,
+    isRead: false,
+    time: getTime(),
+    isStarred: false,
+    sentAt: Date.now()
+
+
+  },
 
 ];
 
