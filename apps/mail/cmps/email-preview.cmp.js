@@ -1,5 +1,6 @@
 import emailDetails from './email-details.cmp.js';
 import { emailServices } from '../services/email-service.js'
+import {noteService} from '../../note/services/note-service.js'
 import longText from '../../../js/main.cmp/long-text.cmp.js';
 
 
@@ -8,7 +9,7 @@ export default {
     props: ['email', 'filterd'],
     template: `
             <li class="cursor"  @click="openEmail" >
-               <div class="grid outer-mail" :class="{ readed: !email.isRead }">
+               <div class="grid outer-mail" :class="{ Unread: !email.isRead, read: email.isRead }">
                <span @click.stop="starEmail(email.id)">
                <i v-if="!email.isStarred" class="far fa-star yellow list-star"  > </i>
                <i v-if="email.isStarred" class="fas fa-star yellow list-star"  >    </i>
@@ -20,11 +21,11 @@ export default {
                 
                 <p class="item">{{email.time.hours}}:{{email.time.mins}}</p>
 
-                <img class="email-box" @click.stop="mark" :src="imgMail"  height="25" width="25">
+              <span class="flex align-center">  <img class="email-box" @click.stop="mark" :src="imgMail"  height="25" width="25"></span>
                <span class="flex align-center"> <i @click.stop="sendToNote(email.id)" class="far fa-sticky-note note-icon"></i></span>
 
 
-                <i @click.stop="deleteEmail(email.id)" class="fa fa-trash trash" aria-hidden="true"></i>
+            <span class="flex align-center">    <i @click.stop="deleteEmail(email.id)" class="fa fa-trash trash" aria-hidden="true"></i></span>
                </div>
 
                 <email-details @close="closeEmail"  :opendemail="email" v-if="opened" ></email-details>
@@ -35,7 +36,7 @@ export default {
     data() {
         return {
             opened: false,
-          
+
 
 
         }
@@ -45,11 +46,11 @@ export default {
         openEmail() {
 
             this.opened = !this.opened;
-            if(this.filterd){
+            if (this.filterd) {
                 if (this.filterd.isRead === 'Unread') return emailServices.markRead(this.email.id, 'unread')
-                .then(eventBus.$emit('change-status', 'status'))
+                    .then(eventBus.$emit('change-status', 'status'))
             }
-         
+
             emailServices.markRead(this.email.id, 'read')
                 .then(eventBus.$emit('change-status', 'status'))
 
@@ -76,14 +77,19 @@ export default {
         },
 
 
-        sendToNote(id){
-            console.log('sending to note',id)
-            emailServices.sendToNote(id);
-        }
+        sendToNote(id) {
+            console.log('sending to note', id)
+            let note = emailServices.sendToNote(id);
+             noteService.addNote(note);
+
+            // console.log(note)
+            // eventBus.$emit('note-add',note)
+
+        },
     },
 
 
-    
+
     created() {
 
     }

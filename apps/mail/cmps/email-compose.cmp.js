@@ -46,6 +46,9 @@ export default {
         }
     },
     created() {
+        const noteTxt = this.$route.params.id;
+        console.log(noteTxt)
+        if (noteTxt) this.newMail.body = noteTxt;
 
 
     }
@@ -74,7 +77,7 @@ export default {
                 txt: "Sent Succefully",
                 type: 'success'
             }
-            eventBus.$emit('show-msg', msg);;
+            eventBus.$emit('show-msg', msg);
 
         }
 

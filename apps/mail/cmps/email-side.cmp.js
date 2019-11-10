@@ -29,7 +29,7 @@ export default {
     computed: {
 
         composeEmail() {
-            return `/email/compose`
+            return `/email/compose/?`
         },
 
         

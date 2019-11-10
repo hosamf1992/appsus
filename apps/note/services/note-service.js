@@ -44,7 +44,7 @@ function addNote(note) {
   }
     gNotes.unshift(newNote)
     storageService.store(NOTES_KEY, gNotes)
-    return Promise.resolve(newNote);
+    return Promise.resolve();
 }
 
 function removeNote(noteId) {

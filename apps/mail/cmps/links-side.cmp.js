@@ -12,6 +12,7 @@ export default {
         <router-link class="flex align-center text-decor justify-center" :to="inboxLink">
          <i @click="reportFilter" class="fas fa-inbox"></i>
           <h4 class="txt-links" @click="reportFilter" >  Inbox</h4>
+          <h3 class="count-mails">({{unreadCount}})</h3>
          </router-link>  
     
     

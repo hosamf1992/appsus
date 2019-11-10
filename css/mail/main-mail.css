@@ -48,10 +48,15 @@ a{
 
 
 .mail-side {
-    margin-top: 30px
+    margin-top: 40px
 }
 .mails-list{
     margin-left: -10px;
+    height: 430px;
+    text-overflow: hidden;
+    overflow: hidden;
+    overflow-y: scroll;
+
 }
 
 .mails-list li {
@@ -62,6 +67,13 @@ a{
     /* height: 70px; */
 }
 
+.mails-list li:hover {
+
+background-color: gray;
+
+}
+
+
 .opened-email {
     grid-column: 1/4;
     background-color: silver;
@@ -69,13 +81,23 @@ a{
 }
 
 .email-form {
+  
+    height: 380px;
     grid-template-rows: repeat(10, 1fr);
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 10px;
     margin-right: 5px;
 }
+
+
+
+
+
+
+
 .email-expanded{
     margin-left: 20px;
+    height: 300px;
 }
 .area-txt {
     grid-row: 6/10;
@@ -97,9 +119,14 @@ a{
     color: rgb(181, 129, 33);
 }
 
-.readed {
-    background-color: darkgrey;
+.Unread {
+    background-color:darkgrey;
 }
+.read{
+    background-color: #a9a9a97d;
+}
+
+
 .read-btn{
     display: flex;
     flex-direction: row-reverse;
@@ -121,7 +148,7 @@ a{
 }
 
 .email-box {
-    margin-top: 16px;
+    /* margin-top: 16px; */
 }
 
 .list-star {
@@ -132,7 +159,7 @@ a{
 }
 
 .trash {
-    margin-top: 18px;
+    /* margin-top: 18px; */
     font-size: 25px;
 }
 
@@ -140,6 +167,20 @@ a{
     font-size: 14px;
 }
 
+.count-mails{
+    color: black;
+    margin-top: 21px;
+    margin-left: 3px;
+}
+
+.fa-inbox{
+    color:black
+}
+
+.fa-plus{
+    color:black
+
+}
 .mails-btn {
     background-color: #808080;
     border: none;
@@ -175,6 +216,8 @@ a{
     font-size: 18px;
     font-family: cursive;
     font-weight: bold;
+    margin-left: 5px;
+    color: black;
 }
 
 
@@ -220,14 +263,14 @@ a{
     width: 20px;
 }
 .trash {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     font-size: 15px;
 }
 
 .note-icon {
    
     font-size: 20px;
-    margin-bottom: 11px;
+    /* margin-bottom: 11px; */
 }
 
 .list-star {
@@ -237,6 +280,9 @@ a{
 }
 .opened-email h2{
     font-size: 18px;
+}
+.count-mails{
+    display: none
 }
   
 }

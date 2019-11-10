@@ -8,7 +8,7 @@ import { makeId } from '../../../js/services/util.service.js'
 export const emailServices = {
   getEmails,
   getEmailById,
-  
+
   readMailStatus,
   sendEmail,
   removeEmail,
@@ -34,21 +34,21 @@ let gEmails = [
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:1573203
+    sentAt: 1573203
 
 
   },
   {
     id: makeId(),
     email: 'puki@gmail.com',
-    sentFrom: 'Nana',
+    sentFrom: 'Hosam',
     subject: 'HELLO JavaScript-HELLO JavaScript',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi",
 
     isRead: false,
     time: getTime(),
     isStarred: true,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
   },
   {
@@ -61,7 +61,7 @@ let gEmails = [
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
   },
@@ -75,7 +75,7 @@ let gEmails = [
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
   },
@@ -89,10 +89,10 @@ let gEmails = [
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
-  },{
+  }, {
     id: makeId(),
     email: 'shmoki@gmail.com',
     sentFrom: 'Rita',
@@ -102,33 +102,33 @@ let gEmails = [
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
-  },{
+  }, {
     id: makeId(),
     email: 'shmoki@gmail.com',
-    sentFrom: 'Shmoki',
+    sentFrom: 'Sasha',
     subject: 'HELLO JavaScript-HELLO JavaScript',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
     ,
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
-  },{
+  }, {
     id: makeId(),
     email: 'shmoki@gmail.com',
-    sentFrom: 'Shmoki',
+    sentFrom: 'alex',
     subject: 'HELLO JavaScript-HELLO JavaScript',
     body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat officia incidunt, fuga dignissimos omnis doloribus optio nam libero cupiditate ad asperiores voluptatibus quis nesciunt, esse officiis! Assumenda iste vero animi"
     ,
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
   }
@@ -149,7 +149,7 @@ function getEmails() {
   gEmails = emails;
   console.log(gEmails)
   return Promise.resolve(gEmails);
- 
+
 }
 
 function getEmailById(id) {
@@ -190,7 +190,7 @@ function sendEmail(mail) {
     isRead: false,
     time: getTime(),
     isStarred: false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 
 
 
@@ -247,32 +247,36 @@ function markStar(id) {
 }
 
 function countUnread() {
-  let count=0;
-  gEmails.forEach(email => count+= email.isRead === false);
+  let count = 0;
+  gEmails.forEach(email => count += email.isRead === false);
   return Promise.resolve(count);
 
 }
 
-function sendReply(id,txt){
+function sendReply(id, txt) {
   let emailIdx = gEmails.findIndex(email => email.id === id);
   console.log(emailIdx)
-  gEmails[emailIdx].body=txt;
+  gEmails[emailIdx].body = txt;
   storageService.store(MAIL_KEY, gEmails);
   return Promise.resolve();
 
 
 }
 
-function sendToNote(id){
+function sendToNote(id) {
   let emailIdx = gEmails.findIndex(email => email.id === id);
-  let email=gEmails[emailIdx];
-  let txt=`   
-  Subject: ${email.subject}
+  let email = gEmails[emailIdx];
+  let note;
+  let text = `   
   Sent From: ${email.sentFrom}
-  Body: ${email.body}
+  Subject: ${email.subject}
+  
 
- 
   `
-  console.log(txt)
+  note = {
+    txt: text,
+    type: 'noteText'
+  }
+  return note;
 
 }

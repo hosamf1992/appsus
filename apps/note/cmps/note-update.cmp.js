@@ -70,12 +70,10 @@ export default {
             this.$emit('closeModal', false);
         },
         sendToMail(noteText){
-            const msg = {
-                txt: noteText,
-                type: 'success'
-            }
-            console.log(msg);
-            eventBus.$emit('show-msg', msg)
+         
+
+            this.$router.replace(`/email/compose/${noteText}`)
+           
         }
         },  
     }
