@@ -75,7 +75,7 @@ let gEmails = [
    
     isRead: false,
     time: getTime(),
-    isStarred: false,
+    isStarred: true,
     sentAt: Date.now()
 
 
@@ -102,7 +102,7 @@ let gEmails = [
     ,
     isRead: false,
     time: getTime(),
-    isStarred: false,
+    isStarred: true,
     sentAt: Date.now()
 
 
@@ -117,7 +117,7 @@ let gEmails = [
  
     isRead: false,
     time: getTime(),
-    isStarred: false,
+    isStarred: true,
     sentAt: Date.now()
 
 

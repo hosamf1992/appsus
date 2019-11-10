@@ -57,7 +57,7 @@ const myRoutes = [
 
     {
         path: '/',
-        redirect: '/email/list'
+        redirect: '/keep'
     },
 
 
