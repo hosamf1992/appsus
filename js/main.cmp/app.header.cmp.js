@@ -9,22 +9,27 @@ export default {
 
        <router-link  class="flex align-center justify-center " to="/email/list" >
        <div @click="closeMenu" class="flex flex-col align-center justify-center">
-        <i class="fas fa-envelope menu-item"></i>
+        <i class="fas fa-envelope menu-item active"></i>
        <span class="inner-txtmenu">Email</span>
       </div>
       </router-link>
 
       <router-link class="flex align-center justify-center " to="/keep" >
       <div @click="closeMenu" class="flex flex-col align-center justify-center">
-         <i class="fas fa-sticky-note menu-item"></i>
+         <i class="fas fa-sticky-note menu-item active "></i>
          <span class="inner-txtmenu">Notes</span>
          </div>
          </router-link>
 
-       <div class="flex flex-col align-center justify-center">
-        <i class="fas fa-map-marker-alt menu-item"> </i>
-        <span class="inner-txtmenu">Map</span>
+         <router-link class="flex align-center justify-center " to="/book" >
+
+       <div @click="closeMenu" class="flex flex-col align-center justify-center">
+       <i class="fas fa-book menu-item active"></i>
+
+       <span class="inner-txtmenu">Books</span>
        </div>
+       </router-link>
+
 
       <div class="flex flex-col align-center justify-center">
        <i class="far fa-calendar-alt menu-item"> </i>
@@ -57,8 +62,9 @@ export default {
      </div>
        
        </div>
+
        <nav class="main-nav" >
-       <h1>Apps Place</h1>
+      <img class="logo-img" src="img/logo/logo.png">
        <button @click="openMenu" id="menu-btn" class="menu-btn" >☰</button>  
       
             

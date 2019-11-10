@@ -39,10 +39,9 @@ a{
 .email-container {
     display: grid;
     grid-template-columns: 15% auto;
-   
-    margin-top: 30px;
+   height: 800px;
     background-color: lightgray;
-    height: 100vh;
+ 
     font-family: cursive monospace sans-serif;
 }
 
@@ -79,7 +78,7 @@ a{
     margin-left: 20px;
 }
 .area-txt {
-    grid-row: 5/10;
+    grid-row: 6/10;
     resize: none;
 }
 .compose{
@@ -109,9 +108,12 @@ a{
 
 }
 
+.note-icon{
+    font-size: 25px;
+}
 .outer-mail {
-    grid-template-columns: repeat(9, 1fr);
-    height: 50px;
+    grid-template-columns: repeat(10, 1fr);
+    /* height: 50px; */
 }
 
 .subject-mail {
@@ -119,7 +121,7 @@ a{
 }
 
 .email-box {
-    margin-top: 10px;
+    margin-top: 16px;
 }
 
 .list-star {
@@ -131,7 +133,7 @@ a{
 
 .trash {
     margin-top: 18px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .count-inbox {
@@ -221,6 +223,13 @@ a{
     margin-top: 15px;
     font-size: 15px;
 }
+
+.note-icon {
+   
+    font-size: 20px;
+    margin-bottom: 11px;
+}
+
 .list-star {
   
     font-size: 15px;

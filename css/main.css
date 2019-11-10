@@ -1,18 +1,32 @@
 @import './mail/main-mail.css';
 @import './note/main-note.css';
+@import './user-msg.css';
+@import '../apps/MissBooks/css/book-main.css';
+
+
 body {
     padding: 10px;
 }
 
-
+.main-nav{
+    height: 60px;
+    background-color: #202124;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+.logo-img{
+    height: 130px;
+}
 
 .menu-btn {
     display: block;
-    position: absolute;
+    /* position: absolute; */
     top: 29px;
     right: 10px;
     background-color: unset;
-    /* color: white; */
+    color: white;
     border: black;
     font-size: 30px;
     font-weight: bolder;
@@ -45,11 +59,17 @@ body {
     font-size: 30px;
     display: flex;
     flex-direction: column;
+    color: lightslategray;
 }
 
 .inner-txtmenu {
     font-size: 15px;
 }
+.active{
+    color: black;
+}
+
+
 
 /* helpers */
 
