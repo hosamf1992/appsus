@@ -15,7 +15,8 @@ export const emailServices = {
   markRead,
   markStar,
   countUnread,
-  sendReply
+  sendReply,
+  sendToNote
 
 
 }
@@ -148,7 +149,7 @@ function getEmails() {
   gEmails = emails;
   console.log(gEmails)
   return Promise.resolve(gEmails);
-  return gEmails
+ 
 }
 
 function getEmailById(id) {
@@ -259,5 +260,19 @@ function sendReply(id,txt){
   storageService.store(MAIL_KEY, gEmails);
   return Promise.resolve();
 
+
+}
+
+function sendToNote(id){
+  let emailIdx = gEmails.findIndex(email => email.id === id);
+  let email=gEmails[emailIdx];
+  let txt=`   
+  Subject: ${email.subject}
+  Sent From: ${email.sentFrom}
+  Body: ${email.body}
+
+ 
+  `
+  console.log(txt)
 
 }

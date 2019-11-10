@@ -70,6 +70,11 @@ export default {
             eventBus.$emit('change-status', 'status');
             this.$router.push('list')
 
+            const msg = {
+                txt: "Sent Succefully",
+                type: 'success'
+            }
+            eventBus.$emit('show-msg', msg);;
 
         }
 

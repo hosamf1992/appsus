@@ -20,7 +20,10 @@ export default {
                 
                 <p class="item">{{email.time.hours}}:{{email.time.mins}}</p>
 
-                <img class="email-box" @click.stop="mark" :src="imgMail"  height="30" width="30">
+                <img class="email-box" @click.stop="mark" :src="imgMail"  height="25" width="25">
+               <span class="flex align-center"> <i @click.stop="sendToNote(email.id)" class="far fa-sticky-note note-icon"></i></span>
+
+
                 <i @click.stop="deleteEmail(email.id)" class="fa fa-trash trash" aria-hidden="true"></i>
                </div>
 
@@ -70,10 +73,15 @@ export default {
                 (eventBus.$emit('change-status', 'status'))
             this.opened = false
 
+        },
+
+
+        sendToNote(id){
+            console.log('sending to note',id)
+            emailServices.sendToNote(id);
         }
-
-
     },
+
 
     
     created() {
