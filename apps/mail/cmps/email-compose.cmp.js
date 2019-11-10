@@ -71,14 +71,15 @@ export default {
                 console.log('email sent'),
             );
             eventBus.$emit('change-status', 'status');
-            this.$router.push('list')
-
             const msg = {
                 txt: "Sent Succefully",
                 type: 'success'
             }
+            
             eventBus.$emit('show-msg', msg);
-
+            this.$router.replace(`/email/list`)
+            // this.$router.push('list')
+            //  return `/email/list`
         }
 
     },
