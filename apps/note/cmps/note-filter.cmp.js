@@ -30,7 +30,7 @@ export default {
                 type: 'All'
                 
             },
-            noteTypes: ['noteText', 'noteImg', 'noteTodo'],
+            noteTypes: ['noteText', 'noteImg', 'noteTodo','noteVideo'],
             type:''
         }
     },
