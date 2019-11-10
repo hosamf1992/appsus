@@ -7,7 +7,7 @@
 
 .note-app-container {
     background-color:#202124;
-    position: relative;
+   
 }
 
 
@@ -24,19 +24,24 @@
     background-color: #202124;
     height: 5em;
     border-bottom: groove yellow;
-   
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+.filter-selector {
+    align-items: center;
+}
+
+
+
 
 .add-note-container {
     background-color: #202124;
     height: 5em;
 }
 
-/* .filter-note-container {
-    background-color: #202124;
-    height: 5em;
-    width: 20em;
-} */
 
 .note {
     background-color: #202124;
@@ -116,6 +121,11 @@
     color: #6a6c74;
 }
 
+.add-note-selector {
+    display: flex;
+    align-items: center;
+}
+
 .label {
     color: yellow;
 }
@@ -124,4 +134,29 @@ button {
     padding: auto;
     border:none;
     text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 660px) {
+
+    .nav-container{
+        flex-direction: column;
+        height: 7em;
+    }
+    .filter-note-container {
+        flex-direction: column;
+    }
+    .input{
+        width: 24em;
+        padding: 3px;
+    }
+    .add-note-container {
+        flex-direction: column;
+        height: 7em;
+    }
+    .add-note-selector {
+        flex-direction: column;
+        height: 7em;
+    }
 }
