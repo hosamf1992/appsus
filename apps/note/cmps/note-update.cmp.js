@@ -27,6 +27,10 @@ export default {
                 <input class="inputColor" type="color" v-model="bgc"
                      @change="updateNoteBGC(value.id, bgc)" >
                 </input>
+
+                <button @click="sendToMail(value.content)" >
+                    <img class="image" src="img/mail/close-mail.jpg"></button>
+
                 
         </section>
     `,
@@ -64,6 +68,14 @@ export default {
         closeModal() {
             this.isShown = false
             this.$emit('closeModal', false);
+        },
+        sendToMail(noteText){
+            const msg = {
+                txt: noteText,
+                type: 'success'
+            }
+            console.log(msg);
+            eventBus.$emit('show-msg', msg)
         }
         },  
     }

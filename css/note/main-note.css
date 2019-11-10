@@ -34,8 +34,14 @@
     align-items: center;
 }
 
+.note-img {
+    height:8em;
+}
 
-
+.image{
+    width: 30px;
+    height: 30px;
+}
 
 .add-note-container {
     background-color: #202124;

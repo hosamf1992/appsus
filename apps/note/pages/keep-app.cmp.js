@@ -13,10 +13,6 @@ export default {
         <section class="note-app-container">
         
         <nav class="nav-container">
-            <!-- <div class="Menu">Menu</div>
-            <div class="nav-user-name">@</div>
-            <div class="nav-user-definitions">definitions</div>
-            <div class="nav-user-display">Display</div> -->
             <note-filter @filtered="setFilter"></note-filter>
         </nav>
 
@@ -87,13 +83,3 @@ export default {
             noteAdd
     }
 }
-// created() {
-//     dogService.getDogs()
-//         .then(dogs => {
-//             this.dogs = dogs
-            
-           
-//             console.log('Dogs', dogs);
-        
-//         })
-// },

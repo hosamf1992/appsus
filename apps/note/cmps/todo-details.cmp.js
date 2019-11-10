@@ -28,6 +28,8 @@ export default {
           deleteToDo() {
             this.toDoIsShown = !this.toDoIsShown;
             this.btnIsShown = !this.btnIsShown 
+            this.$emit('removeToDo', this.todo)
+           
           },
     },
 };
