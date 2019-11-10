@@ -11,6 +11,7 @@ export default {
     <select class="select" v-model="val.type">
           <option value="Type">Type</option>
           <option value="noteText">Text</option>
+          <option value="noteVideo">Video</option>
           <option value="noteImg">Image</option>
           <option value="noteTodo">To do</option>
         </select>
@@ -29,6 +30,7 @@ export default {
         todo: 'Add a new note: Enter comma seperated list...',
         img: 'Add a new note: Enter image url',
         txt: 'Add a new note: whats on your mind?',
+        video: 'Add a new video: whats on your mind?',
         enterType: 'Please select note type from the drop down list'
       }
     }
@@ -51,6 +53,7 @@ export default {
       if (this.val.type === 'noteText') {return this.placeholder.txt}
       else if (this.val.type === 'Type') { return this.placeholder.enterType}
       else if (this.val.type === 'noteImg') { return this.placeholder.img}
+      else if (this.val.type === 'noteVideo') { return this.placeholder.video}
       else if (this.val.type === 'noteTodo') {return this.placeholder.todo}
     },
 

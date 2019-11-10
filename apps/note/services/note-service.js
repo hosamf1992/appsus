@@ -237,7 +237,18 @@ let gNotes = [
           createdAt: new Date().getHours(),
           img: '',
           isPinned: false,
-          bgc: null
+          bgc: null,
+       
+        },
+        {
+          id: makeId(),
+          content: "Birthday 70 uncle",
+          type: 'noteVideo',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          bgc: null,
+          video:"https://www.youtube.com/embed/XxSmY7VNaCk",
         },
         
 

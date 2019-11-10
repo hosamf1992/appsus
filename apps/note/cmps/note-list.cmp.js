@@ -3,6 +3,8 @@
 import noteText from './note-text.cmp.js'
 import noteTodo from './note-todo.cmp.js'
 import noteImg from './note-img.cmp.js'
+import noteVideo from './note-video.cmp.js'
+
 
 export default {
     props: ['notes'],
@@ -29,7 +31,8 @@ export default {
     components: {  
         noteTodo,
         noteText,
-        noteImg
+        noteImg,
+        noteVideo
     }
 }
 
