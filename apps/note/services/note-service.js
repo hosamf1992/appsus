@@ -127,7 +127,7 @@ let gNotes = [
         createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
-        bgc: 'GreenYellow'
+        bgc: 'Orange'
       },
       {
         id: makeId(),
@@ -237,7 +237,7 @@ let gNotes = [
           createdAt: new Date().getHours(),
           img: '',
           isPinned: false,
-          bgc: null
+          bgc: 'brown'
         },
         
 
