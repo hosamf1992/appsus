@@ -92,7 +92,17 @@ function updateNoteBGC(noteId, bgc) {
 }
 
 let gNotes = [
-    {
+  {
+    id: makeId(),
+    content: "Find new galaxy",
+    type: 'noteImg',
+    createdAt: new Date().getHours(),
+    img: 'https://thenypost.files.wordpress.com/2019/09/somethings-killing-galaxys2.jpg?quality=90&strip=all&w=618&h=410&crop=1',
+    isPinned: false,
+    bgc: 'grey'
+  },
+  
+  {
       id: makeId(),
       content: "Buy milk",
       type:'noteImg',
@@ -117,8 +127,9 @@ let gNotes = [
         createdAt: new Date().getHours(),
         img: '',
         isPinned: false,
-        bgc: null
-      },{
+        bgc: 'GreenYellow'
+      },
+      {
         id: makeId(),
         content: "Do some sport",
         type: 'noteText',
@@ -152,7 +163,7 @@ let gNotes = [
           createdAt: new Date().getHours(),
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWkepP2_T3zgNJeYP0P5x5zJjSX_WRqtT9bnEvdRqMmgCAh7kE',
           isPinned: false,
-          bgc: null
+          bgc: 'red'
         }, {
           id: makeId(),
           content: "I love web",
@@ -161,6 +172,15 @@ let gNotes = [
           img: '',
           isPinned: false,
           bgc: null
+        },
+        {
+          id: makeId(),
+          content: "Celibrate New Year eve",
+          type: 'noteImg',
+          createdAt: new Date().getHours(),
+          img: 'https://static.toiimg.com/thumb/67228025/Goa-party-new-year.jpg?width=748&height=499',
+          isPinned: false,
+          bgc: 'grey'
         },
         {
           id: makeId(),
@@ -189,4 +209,38 @@ let gNotes = [
           isPinned: false,
           bgc: null
         },
+        {
+          id: makeId(),
+          content: "Find a ring, save the world",
+          type: 'noteTodo',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          bgc: null
+        },
+
+
+        {
+          id: makeId(),
+          content: "Bank deposit",
+          type: 'noteText',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          bgc: null
+        },
+        
+        {
+          id: makeId(),
+          content: "Birthday 70 uncle",
+          type: 'noteText',
+          createdAt: new Date().getHours(),
+          img: '',
+          isPinned: false,
+          bgc: null
+        },
+        
+
+
+
     ]
