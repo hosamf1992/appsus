@@ -236,13 +236,13 @@ a{
        margin-bottom: 40px;
    }
    .mail-side {
-    margin-left: 15px;
+    margin-left: 20px;
 }
    .email-status{
        display: none;
    }
   .email-container{
-    grid-template-columns: 1% auto;
+    grid-template-columns: 5% auto;
 
   }
   .email-expanded {
