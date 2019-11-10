@@ -131,6 +131,17 @@ let gNotes = [
       },
       {
         id: makeId(),
+        content: "Birthday 70 uncle",
+        type: 'noteVideo',
+        createdAt: new Date().getHours(),
+        img: '',
+        isPinned: false,
+        bgc: null,
+        video:"https://www.youtube.com/embed/XxSmY7VNaCk",
+      },
+      
+      {
+        id: makeId(),
         content: "Do some sport",
         type: 'noteText',
         createdAt: new Date().getHours(),
@@ -240,18 +251,4 @@ let gNotes = [
           bgc: null,
        
         },
-        {
-          id: makeId(),
-          content: "Birthday 70 uncle",
-          type: 'noteVideo',
-          createdAt: new Date().getHours(),
-          img: '',
-          isPinned: false,
-          bgc: null,
-          video:"https://www.youtube.com/embed/XxSmY7VNaCk",
-        },
-        
-
-
-
     ]
