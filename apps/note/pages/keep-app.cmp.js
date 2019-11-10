@@ -69,12 +69,12 @@ export default {
             .then(notes=> {
                 this.notes = notes
         })
-        eventBus.$on('show-msg', (msg)=>{
-                    this.msg = msg;
-                    setTimeout(()=>{
-                        this.msg = null;
-                    }, 1500)
-                })
+        // eventBus.$on('show-msg', (msg)=>{
+        //             this.msg = msg;
+        //             setTimeout(()=>{
+        //                 this.msg = null;
+        //             }, 1500)
+        //         })
     },
     components: {
             noteFilter,
