@@ -39,6 +39,12 @@
     height:8em;
 }
 
+.update-note-img {
+    height:8em;
+    width:8em;
+    margin-bottom: 1em;
+}
+
 .image{
     width: 30px;
     height: 30px;
@@ -67,7 +73,7 @@
 .modal {
     background-color: #6a6c74;
     position: absolute;
-    left: 40%;
+    left: 30%;
     border: 2px solid white;
     border-radius: 3px;
     width:fit-content;
@@ -170,5 +176,9 @@ button {
     .add-note-selector {
         flex-direction: column;
         height: 7em;
+    }
+    .modal {
+        left: 10%;
+        position: relative;
     }
 }

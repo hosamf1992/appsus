@@ -9,7 +9,7 @@ export default {
     <div class="add-note-selector">
     <label class="label">Add a new note:  </label>  
     <select class="select" v-model="val.type">
-          <option>All</option>
+          <option value="Type">Type</option>
           <option value="noteText">Text</option>
           <option value="noteImg">Image</option>
           <option value="noteTodo">To do</option>
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
         val: {
-            type: 'All',
+            type: 'Type',
             txt: ''
         },
       placeholder: {
@@ -36,19 +36,22 @@ export default {
 
   methods: {
     addNote() {
+      if(this.val.type === "Type" || this.val.txt === '') return;
     noteService.addNote(this.val)
       .then(()=> {
         const msg = {
           txt: `note added Succefully`,
           type: 'success'
             }
+            console.log(this.val.txt)
+        if (this.val.txt === '') return;
         if (this.val.type) eventBus.$emit('show-msg', msg)
   })
 },
     
     placeholderText(){
       if (this.val.type === 'noteText') {return this.placeholder.txt}
-      else if (this.val.type === 'All') { return this.placeholder.enterType}
+      else if (this.val.type === 'Type') { return this.placeholder.enterType}
       else if (this.val.type === 'noteImg') { return this.placeholder.img}
       else if (this.val.type === 'noteTodo') {return this.placeholder.todo}
     },

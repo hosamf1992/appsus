@@ -14,8 +14,9 @@ export default {
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
 
-                <img :src="value.img" >
-
+                <section>    
+                <img v-if="value.img" :src="value.img" class="update-note-img">
+                <div>
                 <button @click="removeNote(value.id)" >
                     <img src="img/note/trash.png"></button>
 
@@ -30,7 +31,8 @@ export default {
 
                 <button @click="sendToMail(value.content)" >
                     <img class="image" src="img/mail/close-mail.jpg"></button>
-
+                </div>
+                </section>
                 
         </section>
     `,
