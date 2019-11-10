@@ -61,17 +61,13 @@ a{
 
 .mails-list li {
     grid-template-columns: repeat(3, 1fr);
-    background-color: white;
+  
     border: 0.5px solid gray;
     align-items: center;
     /* height: 70px; */
 }
 
-.mails-list li:hover {
 
-background-color: slategray;
-
-}
 
 
 .opened-email {
@@ -119,13 +115,13 @@ background-color: slategray;
     color: rgb(181, 129, 33);
 }
 
-.Unread {
-    background-color:darkgrey;
-}
+
 .read{
     background-color: #a9a9a97d;
 }
-
+.Unread {
+    /* background-color:darkgrey; */
+}
 
 .read-btn{
     display: flex;
@@ -221,7 +217,11 @@ background-color: slategray;
 }
 
 
+.mails-list li:hover {
 
+    background-color: darkgrey;
+    
+    }
 
 
 
