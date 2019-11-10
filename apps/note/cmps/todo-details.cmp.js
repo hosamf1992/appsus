@@ -2,14 +2,15 @@
 
 export default {
   template: `
-        <section>
+        <section >
+          <div >
           <div 
           :class="{notActive: !toDoIsActive, isHidden: !toDoIsShown}" 
           @click.stop="markNote">{{todo.txt}}   
            <button @click="deleteToDo" :class="{isHidden: !btnIsShown}">
              x</button>
           </div>
-          
+          </div>
         </section>
         `,
   props: ["todo"],

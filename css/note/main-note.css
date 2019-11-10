@@ -13,6 +13,7 @@
 
 .notActive {
     text-decoration-line: line-through;
+
 }
 
 .isHidden {
@@ -85,6 +86,11 @@
     top: 2%; 
 }
 
+.modal-img {
+    height:12em;
+    width:12em;
+}
+
 .pin-on-note {
     background-color: black;
     /* position: absolute;
@@ -133,7 +139,7 @@
 }
 
 .label {
-    color: yellow;
+    color: white;
 }
 
 button {

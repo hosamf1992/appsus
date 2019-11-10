@@ -9,7 +9,7 @@ export default {
     <div class="add-note-selector">
     <label class="label">Add a new note:  </label>  
     <select class="select" v-model="val.type">
-          <option></option>
+          <option>All</option>
           <option value="noteText">Text</option>
           <option value="noteImg">Image</option>
           <option value="noteTodo">To do</option>
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
         val: {
-            type: '',
+            type: 'All',
             txt: ''
         },
       placeholder: {
@@ -48,7 +48,7 @@ export default {
     
     placeholderText(){
       if (this.val.type === 'noteText') {return this.placeholder.txt}
-      else if (this.val.type === '') { return this.placeholder.enterType}
+      else if (this.val.type === 'All') { return this.placeholder.enterType}
       else if (this.val.type === 'noteImg') { return this.placeholder.img}
       else if (this.val.type === 'noteTodo') {return this.placeholder.todo}
     },

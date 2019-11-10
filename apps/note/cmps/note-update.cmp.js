@@ -14,7 +14,7 @@ export default {
                 <p>Reminder: {{ value.content }}</p> 
                 <p>Written At hour: {{ value.createdAt }}</p>
 
-                <img :src="value.img" >
+                <img class="modal-img" :src="value.img" >
 
                 <button @click="removeNote(value.id)" >
                     <img src="img/note/trash.png"></button>
