@@ -74,7 +74,6 @@ export default {
                 txt: noteText,
                 type: 'success'
             }
-            console.log(msg);
             eventBus.$emit('show-msg', msg)
         }
         },  
