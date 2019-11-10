@@ -103,7 +103,7 @@ let gNotes = [
     },
     {
         id: makeId(),
-        content: "Visit barber, collect shirt, take car to repair",
+        content: "Visit barber, Collect shirt, Repair the car",
         type: 'noteTodo',
         createdAt: new Date().getHours(),
         img: '',
@@ -138,7 +138,7 @@ let gNotes = [
       },
       {
           id: makeId(),
-          content: "Study Vue, prepare presentation, cooking course",
+          content: "Study Vue, Prepare presentation, Cooking course",
           type: 'noteTodo',
           createdAt: new Date().getHours(),
           img: '',
@@ -177,6 +177,15 @@ let gNotes = [
           type: 'noteImg',
           createdAt: new Date().getHours(),
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTgwjWlJqJbs9rh-cW17-oQG6jf57itenFKykpbT19DCsOisjuv',
+          isPinned: false,
+          bgc: null
+        },
+        {
+          id: makeId(),
+          content: "Real estate meeting",
+          type:'noteText',
+          createdAt: new Date().getHours(),
+          img: '',
           isPinned: false,
           bgc: null
         },

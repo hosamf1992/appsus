@@ -5,7 +5,7 @@ export default {
         <section>
           <div 
           :class="{notActive: !toDoIsActive, isHidden: !toDoIsShown}" 
-          @click="markNote">{{todo.txt}}   
+          @click.stop="markNote">{{todo.txt}}   
            <button @click="deleteToDo" :class="{isHidden: !btnIsShown}">
              x</button>
           </div>

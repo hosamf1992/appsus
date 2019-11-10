@@ -11,8 +11,13 @@ export default {
     name: 'note-app',
     template: `
         <section class="note-app-container">
-        <nav  class="nav-container flex align-center justify-center">
-            <note-filter @filtered="setFilter"></note-filter> 
+        
+        <nav class="nav-container">
+            <!-- <div class="Menu">Menu</div>
+            <div class="nav-user-name">@</div>
+            <div class="nav-user-definitions">definitions</div>
+            <div class="nav-user-display">Display</div> -->
+            <note-filter @filtered="setFilter"></note-filter>
         </nav>
 
         <note-add></note-add>
