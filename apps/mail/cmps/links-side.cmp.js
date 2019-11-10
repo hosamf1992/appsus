@@ -7,7 +7,7 @@ export default {
 
 
     template: `
- <section class="flex justify-center align-center flex-col" >
+ <section class="flex justify-center align-center flex-col mail-links" >
    
         <router-link class="flex align-center text-decor justify-center" :to="inboxLink">
          <i @click="reportFilter" class="fas fa-inbox"></i>

@@ -36,6 +36,7 @@ a{
     margin-right: 10px;
 }
 
+
 .email-container {
     display: grid;
     grid-template-columns: 15% auto;
@@ -94,6 +95,7 @@ a{
 .email-expanded{
     margin-left: 20px;
     height: 300px;
+    margin-top: 33px;
 }
 .area-txt {
     grid-row: 6/10;
@@ -119,9 +121,7 @@ a{
 .read{
     background-color: #a9a9a97d;
 }
-.Unread {
-    /* background-color:darkgrey; */
-}
+
 
 .read-btn{
     display: flex;
@@ -143,9 +143,7 @@ a{
     grid-column: 3/7;
 }
 
-.email-box {
-    /* margin-top: 16px; */
-}
+
 
 .list-star {
     margin-left: 5px;
@@ -245,8 +243,13 @@ a{
     grid-template-columns: 5% auto;
 
   }
+  .mail-links{
+    position: absolute;
+    margin-top: 61px;
+}
   .email-expanded {
     margin-left: 35px;
+   
 }
 .email-form {
   
@@ -285,4 +288,12 @@ a{
     display: none
 }
   
+}
+
+@media screen and (max-width:390px) {
+
+
+    .mail-side {
+        margin-top: 60px;
+    }
 }
