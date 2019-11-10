@@ -64,7 +64,7 @@ export default {
        </div>
 
        <nav class="main-nav" >
-      <img class="logo-img" src="../img/logo/logo.png">
+      <img class="logo-img" src="img/logo/logo.png">
        <button @click="openMenu" id="menu-btn" class="menu-btn" >☰</button>  
       
             
