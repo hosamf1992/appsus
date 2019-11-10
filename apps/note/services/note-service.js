@@ -151,6 +151,15 @@ let gNotes = [
       },
       {
         id: makeId(),
+        content: "Prepare dog array",
+        type: 'noteImg',
+        createdAt: new Date().getHours(),
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfy7_79trZ2y1X28j01ix1VkQrum29MOyWXLZ4jhjEgMhjCWJx',
+        isPinned: false,
+        bgc: 'grey'
+      },
+      {
+        id: makeId(),
         content: "Real programmers count from 0",
         type:'noteText',
         createdAt: new Date().getHours(),
@@ -243,12 +252,12 @@ let gNotes = [
         
         {
           id: makeId(),
-          content: "Birthday 70 uncle",
+          content: "Nice work, go home!",
           type: 'noteText',
           createdAt: new Date().getHours(),
           img: '',
           isPinned: false,
-          bgc: null,
+          bgc: 'Chocolate',
        
         },
     ]
