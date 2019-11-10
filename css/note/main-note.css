@@ -24,7 +24,7 @@
 .nav-container {
     background-color: #202124;
     height: 5em;
-    border-bottom: groove yellow;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,6 +37,11 @@
 
 .note-img {
     height:8em;
+}
+
+.todo-item {
+    padding: 0.3em;
+    cursor: pointer;
 }
 
 .update-note-img {

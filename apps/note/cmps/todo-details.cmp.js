@@ -3,13 +3,12 @@
 export default {
   template: `
         <section >
-          <div >
+          <div class="todo-item flex flex-row space-between" >
           <div 
           :class="{notActive: !toDoIsActive, isHidden: !toDoIsShown}" 
-          @click.stop="markNote">{{todo.txt}}   
-           <button @click="deleteToDo" :class="{isHidden: !btnIsShown}">
-             x</button>
+          @click.stop="markNote">{{todo.txt}}  
           </div>
+          <div @click.stop="deleteToDo" :class="{isHidden: !btnIsShown}">X</div>
           </div>
         </section>
         `,
@@ -35,5 +34,3 @@ export default {
     },
 };
 
-
-// :class="{isHidden: !toDoIsShown}"

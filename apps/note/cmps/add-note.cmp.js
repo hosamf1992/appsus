@@ -7,7 +7,7 @@ export default {
   template: `
     <section class="add-note-container flex align-center justify-center">
     <div class="add-note-selector">
-    <label class="label">Add a new note:  </label>  
+    <label class="label">Add a note:  </label>  
     <select class="select" v-model="val.type">
           <option value="Type">Type</option>
           <option value="noteText">Text</option>
@@ -43,12 +43,10 @@ export default {
           txt: `note added Succefully`,
           type: 'success'
             }
-            console.log(this.val.txt)
         if (this.val.txt === '') return;
         if (this.val.type) eventBus.$emit('show-msg', msg)
   })
 },
-    
     placeholderText(){
       if (this.val.type === 'noteText') {return this.placeholder.txt}
       else if (this.val.type === 'Type') { return this.placeholder.enterType}

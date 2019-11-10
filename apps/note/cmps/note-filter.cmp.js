@@ -5,7 +5,7 @@ export default {
     template: `
         <section class="filter-note-container flex align-center justify-center">
             <div class="filter-selector flex">
-            <label class="label"> Filter by note type: </label>
+            <label class="label"> Filter notes: </label>
             <select class="select" v-model="filterBy.type" @mouseup="onFilterBy">
                 <option v-for="type in noteTypes">{{type}}</option>
             </select>
