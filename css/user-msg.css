@@ -2,8 +2,8 @@
     background-color: lightgray;
     padding: 20px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10;
+    left: 10;
 }
 
 .user-msg button {
@@ -11,7 +11,7 @@
 }
 
 .user-msg.success {
-    background-color: lightgreen;
+    background-color: gray;
 }
 .user-msg.error {
     background-color: lightcoral;
