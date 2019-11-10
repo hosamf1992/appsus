@@ -7,6 +7,7 @@ export default {
             <div class="filter-selector flex">
             <label class="label"> Filter notes: </label>
             <select class="select" v-model="filterBy.type" @mouseup="onFilterBy">
+            <option value="All">All</option>
                 <option v-for="type in noteTypes">{{type}}</option>
             </select>
             </div>
@@ -26,15 +27,16 @@ export default {
                 {
                 content: '',
                 title: '',
-                type: ''
+                type: 'All'
                 
             },
-            noteTypes: ['','noteText', 'noteImg', 'noteTodo'],
+            noteTypes: ['noteText', 'noteImg', 'noteTodo'],
             type:''
         }
     },
     methods: {
         onFilterBy() {
+            // if (this.filterBy.type === 'All') return
             this.$emit('filtered', this.filterBy)
         },
         

@@ -37,6 +37,7 @@
 
 .note-img {
     height:8em;
+    cursor: pointer;
 }
 
 .todo-item {
@@ -56,6 +57,7 @@
 }
 
 .add-note-container {
+    
     background-color: #202124;
     height: 5em;
 }
@@ -73,11 +75,12 @@
 
 .note-text {
     font: initial;
+    cursor: pointer;
 }
 
 .modal {
     background-color: #6a6c74;
-    position: absolute;
+    position: fixed;
     left: 30%;
     border: 2px solid white;
     border-radius: 3px;
@@ -168,6 +171,7 @@ button {
         height: 7em;
     }
     .filter-note-container {
+        
         flex-direction: column;
     }
     .input{

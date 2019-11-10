@@ -12,8 +12,7 @@ export default {
                 </input>
 
                 <p>Reminder: {{ value.content }}</p> 
-                <p>Written At hour: {{ value.createdAt }}</p>
-
+            
                 <section>    
                 <img v-if="value.img" :src="value.img" class="update-note-img">
                 <div>
