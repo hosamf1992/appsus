@@ -7,7 +7,7 @@ export default {
             <div class="filter-selector flex">
             <label class="label"> Filter notes: </label>
             <select class="select" v-model="filterBy.type" @mouseup="onFilterBy">
-            <option value="All">All</option>
+                <option value="All">All</option>
                 <option v-for="type in noteTypes">{{type}}</option>
             </select>
             </div>

@@ -56,6 +56,7 @@ export default {
 
     computed: {
         notesToShow() {
+
             if (!this.filterBy) return this.notes;
             if (this.filterBy.type=== 'All') return this.notes;
             let regexType = new RegExp(`${this.filterBy.type}`, 'i');
